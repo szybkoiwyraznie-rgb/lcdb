@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sprawdz:
+    name: Testy, integralność i budowanie
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pobierz repozytorium
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ustaw Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Uruchom testy i bramy integralności
+        run: npm test
+
+      - name: Sprawdź archiwa zapisów rozgrywki
+        run: npm run zapis
+
+      - name: Zbuduj witrynę (powłoka + drzewo danych)
+        run: npm run build
+
+      - name: Sprawdź obecność artefaktu
+        run: |
+          test -s dist/index.html
+          test -d dist/data
+          ls -lh dist/index.html
+          ls -lh dist/data | head -n 20

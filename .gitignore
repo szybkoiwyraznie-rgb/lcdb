@@ -1,0 +1,21 @@
+# Artefakt budowania — generowany poleceniem npm run build, nie trafia do Gita
+dist/
+
+# Asekuracja (projekt nie instaluje zależności npm — ADR 0002)
+node_modules/
+
+# Surowe paczki pobrane z Google Drive — źródłem prawdy w repo jest rozgrywka/zapisy/
+google_drive/
+
+# Lokalne zrzuty robocze przed ewentualnym wdrożeniem zewnętrznego magazynu mediów
+media/orig/
+
+# Systemowe i edytorowe
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.log

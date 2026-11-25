@@ -1,0 +1,62 @@
+name: Publikacja GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  buduj:
+    name: Zbuduj witrynę
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pobierz repozytorium
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ustaw Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Uruchom testy i bramy integralności
+        run: npm test
+
+      - name: Sprawdź archiwa zapisów rozgrywki
+        run: npm run zapis
+
+      - name: Zbuduj witrynę (powłoka + drzewo danych)
+        run: npm run build
+
+      - name: Skonfiguruj GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Przekaż artefakt do publikacji
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  publikuj:
+    name: Opublikuj na GitHub Pages
+    needs: buduj
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.wdrozenie.outputs.page_url }}
+    steps:
+      - name: Wdróż na GitHub Pages
+        id: wdrozenie
+        uses: actions/deploy-pages@v4
