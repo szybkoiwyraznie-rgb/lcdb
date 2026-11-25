@@ -39,29 +39,7 @@ const TRASY_STRONY = new Set(Object.keys(LISTA_TRAS));
 
 let tokenRender = 0;
 
-async function renderuj(trasa) {
-  const app = globalThis.document?.getElementById('app');
-  if (!app) return;
-  if (trasa.nazwa === 'kotwica') return;
-
-  const moj = ++tokenRender;
-  if (trasa.nazwa === 'szukaj' && trasa.query?.q) await dociagnijTeksty();
-  if (trasa.nazwa === 'co-nowego') await dociagnijCoNowego();
-  if (TRASY_STRONY.has(trasa.nazwa) && trasa.param) {
-    try {
-      await dociagnijStrone(trasa.param);
-    } catch (blad) {
-      if (moj !== tokenRender) return;
-      app.innerHTML = rama(
-        'glowna',
-        'Nie udało się wczytać strony',
-        `<p class="pusto">${blad.message}</p><p><a href="#/">Wróć na początek</a></p>`,
-      );
-      return;
-    }
-  }
-  if (moj !== tokenRender) return;
-
+export function zbudujWidok(trasa) {
   let aktywna = trasa.nazwa;
   let tytul = 'Kronika';
   let html;
@@ -157,10 +135,38 @@ async function renderuj(trasa) {
       ? coNowegoCzas()
       : czasBazy();
 
-  app.innerHTML = rama(aktywna, tytul, html, {
+  const pelnyHtml = rama(aktywna, tytul, html, {
     szukaj: trasa.query?.q ?? '',
     stopka: czasStopki(czas),
   });
+  return { aktywna, tytul, html, pelnyHtml };
+}
+
+async function renderuj(trasa) {
+  const app = globalThis.document?.getElementById('app');
+  if (!app) return;
+  if (trasa.nazwa === 'kotwica') return;
+
+  const moj = ++tokenRender;
+  if (trasa.nazwa === 'szukaj' && trasa.query?.q) await dociagnijTeksty();
+  if (trasa.nazwa === 'co-nowego') await dociagnijCoNowego();
+  if (TRASY_STRONY.has(trasa.nazwa) && trasa.param) {
+    try {
+      await dociagnijStrone(trasa.param);
+    } catch (blad) {
+      if (moj !== tokenRender) return;
+      app.innerHTML = rama(
+        'glowna',
+        'Nie udało się wczytać strony',
+        `<p class="pusto">${blad.message}</p><p><a href="#/">Wróć na początek</a></p>`,
+      );
+      return;
+    }
+  }
+  if (moj !== tokenRender) return;
+
+  const { tytul, pelnyHtml } = zbudujWidok(trasa);
+  app.innerHTML = pelnyHtml;
   tytulStrony(tytul);
   domknijInterakcje(app, trasa.kotwica);
 }
@@ -222,9 +228,6 @@ function podepnijFiltry() {
   };
 }
 
-podepnijSkokiWStronie();
-podepnijFiltry();
-
 async function start() {
   try {
     await zaladujDane();
@@ -241,4 +244,8 @@ async function start() {
   if (czyTrybPlikow()) globalThis.document?.documentElement?.setAttribute('data-tryb', 'pliki');
 }
 
-start();
+if (globalThis.document) {
+  podepnijSkokiWStronie();
+  podepnijFiltry();
+  start();
+}

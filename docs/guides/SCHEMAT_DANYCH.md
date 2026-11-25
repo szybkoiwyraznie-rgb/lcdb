@@ -22,6 +22,7 @@ Ten przewodnik opisuje strukturę kart w `content/`, słowniki dozwolonych warto
 | `tytul` | tak | napis | Polski tytuł lub miano wyświetlane w nagłówku karty i na listach |
 | `tytul_kr` | nie | napis | Oryginalny zapis koreański (np. `림버스 컴퍼니`, `수감자`), gdy wnosi wartość |
 | `tytul_en` | nie | napis | Zapis angielski z oficjalnej lokalizacji, jeśli różni się od `tytul` |
+| `streszczenie` | w `scena` tak | napis | Jednozdaniowy skrót na potrzeby list, kafelków i podtytułu karty (nie powtarza słowo w słowo `## Opis`) |
 | `tagi` | nie | lista slugów | Powracające motywy łączące karty ponad podziałem na działy (np. `[zegar, zlota-galaz, pamiec]`) |
 | `zrodla` | nie | lista URL | Dodatkowa lista adresów `http(s)://` na poziomie karty (nie zastępuje przypisów `{{zrodlo …}}` w blokach kwerendy!) |
 | `utworzono` | nie | `RRRR-MM-DD` | Data założenia karty |

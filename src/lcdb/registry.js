@@ -125,6 +125,7 @@ const WSPOLNE = [
   'tytul',
   'tytul_kr',
   'tytul_en',
+  'streszczenie',
   'tagi',
   'zrodla',
   'utworzono',
