@@ -49,3 +49,6 @@ Ten plik zbiera wnioski z prowadzenia bliźniaczych kronik (`wwm`, `srw`) oraz s
 
 ### 2.5. Podgląd na żywo czyta `dist/`, a brakujący `/data/*.json` daje 404
 - Po każdej edycji plików w `content/` uruchom `npm run build` — w przeciwnym razie nowa karta istnieje w indeksie lub kodzie, lecz przeglądarka dostanie `404` przy próbie pobrania `data/<slug>.json`.
+
+### 2.6. Części tytułowe (`.naglowek-strony`, `.hero`) wypełniają pełną szerokość kontenera
+- Nigdy nie nakładaj ograniczenia `max-width` w `ch` ani wąskich `px` na `.wstep`, `.hero-opis`, `.hero-szukaj` czy `.szukaj-formularz`, ani `display: inline-block` na `.hero-granica`. W układzie o szerokości `1240px` ograniczenie `72ch` / `540px` ściska całą część tytułową do lewej połowy ekranu i zostawia prawą połowę pustą. Szerokość wstępu i paska wyszukiwania zawsze wyznacza pełna szerokość kontenera (`max-width: none; width: 100%`).

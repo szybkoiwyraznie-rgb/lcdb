@@ -169,11 +169,13 @@ export function kolumnaBoczna(grupy, etykietaAria = 'Powiązania', { spisBoksow 
 }
 
 export function naglowekStrony({ tytul, opis = '', meta = '', sciezka = null }) {
+  const gora = (sciezka || meta)
+    ? `<div class="naglowek-strony-gora">${sciezka ?? '<span></span>'}${meta ? `<p class="meta">${meta}</p>` : ''}</div>`
+    : '';
   return `<header class="naglowek-strony">
+  ${gora}
   <h1>${escapeHtml(tytul)}</h1>
   ${opis ? `<p class="wstep">${opis}</p>` : ''}
-  ${meta ? `<p class="meta">${meta}</p>` : ''}
-  ${sciezka ?? ''}
 </header>`;
 }
 

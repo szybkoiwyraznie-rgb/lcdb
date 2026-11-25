@@ -74,7 +74,6 @@ export function renderEncja(typ, slug) {
 
   const naglowek = naglowekStrony({
     tytul: strona.tytul,
-    opis: strona.streszczenie ? escapeHtml(strona.streszczenie) : '',
     meta: metaCzesci,
     sciezka: okruszki([
       { etykieta: nazwaTypu(strona.typ, true), href: hrefListy(strona.typ) },

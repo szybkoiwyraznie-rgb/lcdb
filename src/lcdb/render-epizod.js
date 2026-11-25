@@ -56,7 +56,6 @@ export function renderEpizod(slug) {
 
   const naglowek = naglowekStrony({
     tytul: epizod.tytul,
-    opis: epizod.streszczenie ? escapeHtml(epizod.streszczenie) : '',
     meta: [
       rozdzial ? `Rozdział: <a href="${hrefDlaSlug(rozdzial.slug, 'rozdzial')}">${escapeHtml(rozdzial.tytul)}</a>` : '',
       epizod.tytul_kr ? `<span lang="ko">${escapeHtml(epizod.tytul_kr)}</span>` : '',
@@ -105,7 +104,6 @@ export function renderRozdzial(slug) {
 
   const naglowek = naglowekStrony({
     tytul: rozdzial.oznaczenie ? `${rozdzial.oznaczenie}: ${rozdzial.tytul}` : rozdzial.tytul,
-    opis: rozdzial.streszczenie ? escapeHtml(rozdzial.streszczenie) : '',
     meta: [
       rozdzial.tytul_kr ? `<span lang="ko">${escapeHtml(rozdzial.tytul_kr)}</span>` : '',
       rozdzial.tytul_en ? escapeHtml(rozdzial.tytul_en) : '',

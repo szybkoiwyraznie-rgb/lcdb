@@ -282,25 +282,44 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Nagłówek strony i okruszki */
+/* Nagłówek strony i okruszki — pełna szerokość kontenera i zlicowanie z kartami poniżej */
 .naglowek-strony {
-  margin-bottom: 1.4rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--ramka);
+  width: 100%;
+  background: var(--tlo-karty);
+  border: 1px solid var(--ramka);
+  border-top: 3px solid var(--akcent);
+  border-radius: 6px;
+  padding: 1.15rem 1.35rem;
+  margin-bottom: 1.2rem;
+  box-shadow: var(--cien);
+}
+
+.naglowek-strony-gora {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.45rem;
+}
+
+.naglowek-strony-gora .meta {
+  margin: 0;
 }
 
 .naglowek-strony h1 {
-  margin: 0 0 0.4rem;
+  margin: 0;
   font-family: var(--font-tekst);
   font-size: clamp(1.6rem, 2.8vw, 2.25rem);
   line-height: 1.25;
 }
 
+/* Wstęp wypełnia całą szerokość nagłówka — bez sztucznego łamania w połowie strony przez `ch`. */
 .wstep {
-  margin: 0.35rem 0;
-  font-size: 1.05rem;
-  color: var(--tekst);
-  max-width: 72ch;
+  margin: 0.45rem 0 0;
+  font-size: 1.03rem;
+  color: var(--tekst-cichy);
+  max-width: none;
 }
 
 .meta {
@@ -316,7 +335,7 @@ a:hover {
 
 .okruszki ol {
   list-style: none;
-  margin: 0.55rem 0 0;
+  margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -618,11 +637,12 @@ html[data-theme="dark"] .pewnosc {
 }
 
 .hero {
+  width: 100%;
   background: var(--tlo-karty);
   border: 1px solid var(--ramka);
   border-top: 4px solid var(--akcent);
   border-radius: 8px;
-  padding: 1.75rem 1.8rem;
+  padding: 1.65rem 1.75rem;
   margin-bottom: 1.5rem;
   box-shadow: var(--cien);
 }
@@ -643,26 +663,32 @@ html[data-theme="dark"] .pewnosc {
 }
 
 .hero-opis {
-  margin: 0 0 0.85rem;
-  max-width: 72ch;
+  margin: 0 0 1rem;
+  max-width: none;
   color: var(--tekst-cichy);
+  font-size: 1.03rem;
 }
 
 .hero-granica {
   margin: 0 0 1rem;
   font-size: 0.92rem;
-  padding: 0.45rem 0.75rem;
+  padding: 0.55rem 0.85rem;
   background: var(--zloto-tlo);
   border-left: 3px solid var(--zloto);
-  border-radius: 0 4px 4px 0;
-  display: inline-block;
+  border-radius: 0 5px 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
 }
 
 .hero-szukaj,
 .szukaj-formularz {
   display: flex;
   gap: 0.5rem;
-  max-width: 540px;
+  width: 100%;
+  max-width: none;
 }
 
 .hero-szukaj input,

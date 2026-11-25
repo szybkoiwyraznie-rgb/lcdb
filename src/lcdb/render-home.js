@@ -31,7 +31,7 @@ export function renderHome() {
   const hipotezy = wszystkieHipotezy().slice(0, 5);
 
   const granicaHtml = ostatnia
-    ? `<p class="hero-granica">Dotąd opowiedziane: <a href="${hrefDlaSlug(ostatnia.slug, 'scena')}"><strong>${escapeHtml(ostatnia.tytul)}</strong></a> · <a href="#/chronologia">cała chronologia</a></p>`
+    ? `<div class="hero-granica"><span>Dotąd opowiedziane: <a href="${hrefDlaSlug(ostatnia.slug, 'scena')}"><strong>${escapeHtml(ostatnia.tytul)}</strong></a></span><a href="#/chronologia">cała chronologia →</a></div>`
     : '';
 
   const hero = `<section class="hero">

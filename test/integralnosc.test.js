@@ -5,6 +5,7 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -90,5 +91,18 @@ test('wpisy historii interpretacji z polem poprzednio są widoczne na wyrenderow
   for (const s of zRewizja) {
     const html = wyrenderujWidok(parsujHash(hrefDlaSlug(s.slug, s.typ)));
     assert.match(html, /class="historia-interpretacji"/, `${s.slug}: brak bloku Poprzednia wersja w HTML`);
+  }
+});
+
+test('części tytułowe (.naglowek-strony i .hero) wykorzystują pełną szerokość kontenera bez zwężania w ch/px', () => {
+  const css = fs.readFileSync(path.join(ROOT, 'src', 'lcdb', 'style.css'), 'utf8');
+  for (const selektor of ['\\.wstep', '\\.hero-opis', '\\.hero-szukaj']) {
+    const blok = css.match(new RegExp(`${selektor}[^{]*\\{([^}]*)\\}`));
+    assert.ok(blok, `brak reguły CSS dla ${selektor}`);
+    assert.doesNotMatch(
+      blok[1],
+      /max-width:\s*\d+(?:ch|px|rem)/,
+      `${selektor} nie może mieć sztucznego ograniczenia max-width zwężającego nagłówek do połowy strony`,
+    );
   }
 });
