@@ -57,7 +57,7 @@ git fetch origin <gałąź-sesji> --unshallow || git fetch origin <gałąź-sesj
    git fetch --unshallow
    ```
    W workflowach `.github/workflows/ci.yml` oraz `.github/workflows/pages.yml` ustawiono `fetch-depth: 0`.
-2. **Opisy commitów i PR-ów:** przekazuj je przez pliki w `/tmp` (`git commit -F /tmp/commit_msg.txt`, `gh pr create --body-file /tmp/pr_body.md`, `gh pr edit <nr> --body-file /tmp/pr_body.md`), unikając zagnieżdżonych cudzysłowów i obcinania znaków diakrytycznych.
+2. **Opisy commitów i PR-ów:** przekazuj je przez pliki w `/tmp` (`git commit -F /tmp/commit_msg.txt`, `gh pr create --body-file /tmp/pr_body.md`, a przy aktualizacji opisu `gh api repos/szybkoiwyraznie-rgb/lcdb/pulls/<nr> -X PATCH -F body=@/tmp/pr_body.md` — starsze `gh pr edit` w wersji 2.23 odpytuje wycofane pole GraphQL `projectCards`), unikając zagnieżdżonych cudzysłowów i obcinania znaków diakrytycznych.
 3. **Odczyt PR-ów przez `gh`:** gołe `gh pr view <nr>` zwraca błąd GraphQL (`Projects (classic) is being deprecated… pullRequest.projectCards`). Zawsze podawaj jawne pola JSON lub używaj REST API:
    ```bash
    gh pr view <nr> --json number,title,state,body,url

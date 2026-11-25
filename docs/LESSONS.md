@@ -59,3 +59,7 @@ Ten plik gromadzi konkretne błędy i pułapki zidentyfikowane w bliźniaczych k
 ### L14. Akta, Światy Lustrzane, Abominacje i Zapiski Dantego to opowieść, nie „śmieci z interfejsu”
 - **Pułapka:** Zbyt mechaniczne stosowanie zasady „fabuła przed mechaniką” może skłonić do odrzucenia opisów Tożsamości ze Światów Lustrzanych lub dzienników obserwacji Abominacji, w których kryje się lwia część wiedzy o Mieście.
 - **Zasada:** Odrzucamy wyłącznie liczby i reguły walki (monety, obrażenia, progi, rzadkości); każdy akapit opowieści z akt, Światów Lustrzanych, E.G.O i *Zapisków Dantego* wchodzi do kroniki we właściwej warstwie pochodzenia.
+
+### L15. Aktualizacja opisu PR-a przez REST API `gh api` zamiast `gh pr edit`
+- **Pułapka:** Starszy klient `gh` (np. `2.23`) przy wywołaniu `gh pr edit` odpytuje wycofane pole GraphQL `projectCards` i przerywa działanie błędem mimo poprawnych uprawnień.
+- **Zasada:** Do aktualizacji opisu otwartego PR-a używaj `gh api repos/szybkoiwyraznie-rgb/lcdb/pulls/<nr> -X PATCH -F body=@/tmp/pr_body.md`.

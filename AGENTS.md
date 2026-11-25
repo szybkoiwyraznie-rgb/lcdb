@@ -34,7 +34,7 @@ Nie przestawiaj tej kolejności ([ADR 0014](docs/decisions/0014-sesja-galaz-pr-i
 
 1. Pracuj **wyłącznie** na gałęzi przypisanej do bieżącej sesji (`arena/…`). Nigdy nie przełączaj się na inną gałąź, nie twórz dodatkowych gałęzi i nie wypychaj niczego na `main`.
 2. Jeśli na gałęzi sesji nie ma jeszcze otwartego PR-a do `main`, utwórz pierwszy pusty commit planu (`git commit --allow-empty -F /tmp/commit_msg.txt`), wypchnij gałąź (`git push -u origin <gałąź-sesji>`) i otwórz PR (`gh pr create --base main --head <gałąź-sesji> --body-file /tmp/pr_body.md`).
-3. Opis PR-a jest **żywym dokumentem sesji** — aktualizuj go po każdym większym kroku (`gh pr edit <nr> --body-file /tmp/pr_body.md`).
+3. Opis PR-a jest **żywym dokumentem sesji** — aktualizuj go po każdym większym kroku (`gh api repos/szybkoiwyraznie-rgb/lcdb/pulls/<nr> -X PATCH -F body=@/tmp/pr_body.md`).
 
 ### Krok `(2)` — Lektura obowiązkowa
 
