@@ -1,0 +1,1010 @@
+/*
+ * Styl kroniki Limbus Company (`lcdb`).
+ *
+ * Jasny motyw nawiązuje do kart papierowego dziennika Dantego z karmazynowym
+ * atramentem LCB i mosiężnym połyskiem Złotej Gałęzi; ciemny — do nocnego asfaltu
+ * Miasta i wnętrza Mefistofelesa. Cztery kolory pochodzenia i fiolet interpretacji
+ * pozostają natychmiast odróżnialne w obu motywach (ADR 0005, 0006).
+ */
+
+:root,
+html[data-theme="light"] {
+  --tlo: #f5f1ea;
+  --tlo-karty: #fcfaf6;
+  --tlo-wypukle: #efe9df;
+  --tekst: #1d1918;
+  --tekst-cichy: #5e554f;
+  --ramka: #dcd2c4;
+  --ramka-mocna: #c4b6a4;
+
+  --akcent: #961e23;
+  --akcent-hover: #721317;
+  --akcent-tlo: #f9eced;
+  --zloto: #7d5b1e;
+  --zloto-tlo: #f6efe0;
+
+  /* Cztery pochodzenia informacji + fiolet interpretacji (ADR 0005, 0006) */
+  --kol-dostawa: #244a6b;
+  --tlo-dostawa: #eef3f8;
+  --kol-opracowanie: #2e5f46;
+  --tlo-opracowanie: #edf5f0;
+  --kol-kwerenda: #8a5612;
+  --tlo-kwerenda: #fbf3e4;
+  --kol-model: #4b5968;
+  --tlo-model: #f0f2f5;
+  --kol-hipoteza: #68389c;
+  --tlo-hipoteza: #f5effb;
+
+  --cien: 0 1px 3px rgba(28, 20, 14, 0.06);
+  --font-tekst: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Noto Serif KR", serif;
+  --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html[data-theme="dark"] {
+  --tlo: #121114;
+  --tlo-karty: #1b191e;
+  --tlo-wypukle: #252229;
+  --tekst: #ebe5dc;
+  --tekst-cichy: #a69d93;
+  --ramka: #312d37;
+  --ramka-mocna: #47404f;
+
+  --akcent: #e05257;
+  --akcent-hover: #f27276;
+  --akcent-tlo: #2b1719;
+  --zloto: #d8ad57;
+  --zloto-tlo: #2b2416;
+
+  --kol-dostawa: #6da5d9;
+  --tlo-dostawa: #16212c;
+  --kol-opracowanie: #6abf93;
+  --tlo-opracowanie: #16261e;
+  --kol-kwerenda: #df9f49;
+  --tlo-kwerenda: #292014;
+  --kol-model: #9aaaba;
+  --tlo-model: #1d2228;
+  --kol-hipoteza: #b58ae6;
+  --tlo-hipoteza: #231b2e;
+
+  --cien: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--tlo);
+  color: var(--tekst);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.65;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--akcent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--akcent-hover);
+}
+
+.skok-dostępnosci {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--akcent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+}
+
+.skok-dostępnosci:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.ukryty-etykieta {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Pasek górny */
+.pasek-gorny {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--tlo-karty);
+  border-bottom: 2px solid var(--akcent);
+  box-shadow: var(--cien);
+}
+
+.pasek-gorny-wewn {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0.55rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.marka {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--tekst);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-right: auto;
+}
+
+.marka-znak {
+  color: var(--akcent);
+  font-size: 1.15rem;
+}
+
+.marka-tekst small {
+  font-weight: 400;
+  color: var(--tekst-cichy);
+  font-size: 0.82rem;
+  margin-left: 0.25rem;
+}
+
+.menu-glowne {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.65rem;
+  font-size: 0.9rem;
+}
+
+.menu-glowne a {
+  text-decoration: none;
+  color: var(--tekst-cichy);
+  padding: 0.25rem 0.45rem;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.menu-glowne a:hover,
+.menu-glowne a.aktywny {
+  color: var(--akcent);
+  background: var(--akcent-tlo);
+  font-weight: 600;
+}
+
+.pasek-akcje {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.przycisk-ikona {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--ramka);
+  border-radius: 5px;
+  background: var(--tlo);
+  color: var(--tekst);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.przycisk-ikona:hover {
+  border-color: var(--akcent);
+  color: var(--akcent);
+}
+
+/* Główny kontener i układ 3:1 */
+.kontener-glowny {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 1.6rem 1.25rem 3rem;
+  flex: 1;
+}
+
+.uklad-strony {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(240px, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 920px) {
+  .uklad-strony {
+    grid-template-columns: 1fr;
+  }
+}
+
+.kolumna-boczna {
+  position: sticky;
+  top: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.boczny-blok {
+  background: var(--tlo-karty);
+  border: 1px solid var(--ramka);
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  box-shadow: var(--cien);
+}
+
+.boczny-blok h3 {
+  margin: 0 0 0.55rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--tekst-cichy);
+}
+
+.boczny-spis {
+  border-top: 3px solid var(--zloto);
+}
+
+.spis-boksow {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 0.88rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.spis-boksow a {
+  text-decoration: none;
+}
+
+.spis-boksow a:hover {
+  text-decoration: underline;
+}
+
+/* Nagłówek strony i okruszki */
+.naglowek-strony {
+  margin-bottom: 1.4rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ramka);
+}
+
+.naglowek-strony h1 {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-tekst);
+  font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+  line-height: 1.25;
+}
+
+.wstep {
+  margin: 0.35rem 0;
+  font-size: 1.05rem;
+  color: var(--tekst);
+  max-width: 72ch;
+}
+
+.meta {
+  margin: 0.25rem 0 0;
+  font-size: 0.87rem;
+  color: var(--tekst-cichy);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+}
+
+.okruszki ol {
+  list-style: none;
+  margin: 0.55rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  font-size: 0.84rem;
+  color: var(--tekst-cichy);
+}
+
+.okruszki li + li::before {
+  content: "›";
+  margin-right: 0.35rem;
+  color: var(--ramka-mocna);
+}
+
+/* Boksy i metryka */
+.boks {
+  background: var(--tlo-karty);
+  border: 1px solid var(--ramka);
+  border-radius: 6px;
+  padding: 1.15rem 1.35rem;
+  margin-bottom: 1.1rem;
+  box-shadow: var(--cien);
+}
+
+.boks > h2 {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-tekst);
+  font-size: 1.28rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--ramka);
+}
+
+.boks-naglowek-wiersz {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--ramka);
+}
+
+.boks-naglowek-wiersz h2 {
+  margin: 0;
+  font-family: var(--font-tekst);
+  font-size: 1.2rem;
+}
+
+.podswietlony-cel {
+  outline: 2px solid var(--zloto);
+  outline-offset: 3px;
+}
+
+.metryka {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.65rem 1.1rem;
+  background: var(--tlo-karty);
+  border: 1px solid var(--ramka);
+  border-left: 4px solid var(--zloto);
+  border-radius: 6px;
+  padding: 0.9rem 1.2rem;
+  margin: 0 0 1.1rem;
+}
+
+.metryka-wiersz dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--tekst-cichy);
+}
+
+.metryka-wiersz dd {
+  margin: 0.1rem 0 0;
+  font-weight: 500;
+}
+
+/* Warstwy pochodzenia (ADR 0005, 0006) */
+.fragment.poziom {
+  border-left: 4px solid var(--ramka-mocna);
+  background: var(--tlo-wypukle);
+  padding: 0.75rem 1rem;
+  border-radius: 0 5px 5px 0;
+  margin: 0.75rem 0;
+}
+
+.fragment.poziom:first-of-type {
+  margin-top: 0.25rem;
+}
+
+.fragment.poziom p:last-child,
+.fragment.poziom ul:last-child,
+.fragment.poziom ol:last-child {
+  margin-bottom: 0;
+}
+
+.poziom-dostawa {
+  border-left-color: var(--kol-dostawa) !important;
+  background: var(--tlo-dostawa) !important;
+}
+
+.poziom-opracowanie {
+  border-left-color: var(--kol-opracowanie) !important;
+  background: var(--tlo-opracowanie) !important;
+}
+
+.poziom-kwerenda {
+  border-left-color: var(--kol-kwerenda) !important;
+  background: var(--tlo-kwerenda) !important;
+}
+
+.poziom-model {
+  border-left-color: var(--kol-model) !important;
+  background: var(--tlo-model) !important;
+}
+
+.poziom-model.rodzaj-interpretacja {
+  border-left-color: var(--kol-hipoteza) !important;
+  background: var(--tlo-hipoteza) !important;
+}
+
+.poziom-nad-trescia {
+  margin: 0 0 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.naglowek-fragmentu {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+
+.naglowek-fragmentu h3,
+.naglowek-fragmentu h4 {
+  margin: 0;
+}
+
+.poziom-plakietki {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.pochodzenie-etykieta {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  border: 1px solid currentColor;
+}
+
+.pochodzenie-dostawa { color: var(--kol-dostawa); }
+.pochodzenie-opracowanie { color: var(--kol-opracowanie); }
+.pochodzenie-kwerenda { color: var(--kol-kwerenda); }
+.pochodzenie-model { color: var(--kol-model); }
+.rodzaj-interpretacja .pochodzenie-model { color: var(--kol-hipoteza); }
+
+.pewnosc {
+  display: inline-block;
+  font-size: 0.73rem;
+  font-weight: 700;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  color: var(--kol-hipoteza);
+  background: rgba(104, 56, 156, 0.12);
+}
+
+html[data-theme="dark"] .pewnosc {
+  background: rgba(181, 138, 230, 0.18);
+}
+
+/* Źródła kwerendy */
+.zrodla {
+  margin: 0.65rem 0 0;
+  padding: 0.45rem 0 0 1.1rem;
+  border-top: 1px dashed var(--ramka-mocna);
+  font-size: 0.83rem;
+}
+
+.zrodlo-data {
+  margin-left: 0.45rem;
+  color: var(--tekst-cichy);
+  font-size: 0.78rem;
+}
+
+/* Dosłowny zapis sceny i skoki analiza ↦ treść */
+.zapis-tekst {
+  font-family: var(--font-tekst);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.zapis-tekst p {
+  margin: 0.6rem 0;
+}
+
+.skok-do-tresci {
+  text-decoration: none;
+  color: var(--tekst);
+}
+
+.skok-do-tresci:hover {
+  color: var(--akcent);
+}
+
+.skok-do-tresci-znak {
+  margin-left: 0.35rem;
+  color: var(--zloto);
+  font-weight: 600;
+}
+
+/* Historia interpretacji („Poprzednia wersja” — ADR 0007) */
+.historia-interpretacji {
+  margin-top: 0.85rem;
+  border: 1px dashed var(--ramka-mocna);
+  border-radius: 5px;
+  padding: 0.5rem 0.85rem;
+  background: var(--tlo);
+  font-size: 0.9rem;
+}
+
+.historia-interpretacji summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--tekst-cichy);
+}
+
+.historia-interpretacji-cialo {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.rewizja-meta {
+  margin: 0 0 0.3rem;
+  font-size: 0.83rem;
+  color: var(--tekst-cichy);
+}
+
+.rewizja-data {
+  font-family: var(--font-mono);
+}
+
+.rewizja-cytat {
+  margin: 0;
+  padding: 0.45rem 0.8rem;
+  border-left: 3px solid var(--kol-hipoteza);
+  background: var(--tlo-karty);
+  color: var(--tekst-cichy);
+}
+
+.rewizja-cytat p {
+  margin: 0.3rem 0;
+}
+
+/* Chipy, listy, karty i strona główna */
+.chipy {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: 4px;
+  border: 1px solid var(--ramka);
+  background: var(--tlo);
+  color: var(--tekst);
+  font-size: 0.83rem;
+  text-decoration: none;
+}
+
+.chip:hover {
+  border-color: var(--akcent);
+  color: var(--akcent);
+}
+
+.chip-typ {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--tekst-cichy);
+}
+
+.hero {
+  background: var(--tlo-karty);
+  border: 1px solid var(--ramka);
+  border-top: 4px solid var(--akcent);
+  border-radius: 8px;
+  padding: 1.75rem 1.8rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--cien);
+}
+
+.hero-nadtytul {
+  margin: 0 0 0.25rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--zloto);
+  font-weight: 700;
+}
+
+.hero h1 {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-tekst);
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+}
+
+.hero-opis {
+  margin: 0 0 0.85rem;
+  max-width: 72ch;
+  color: var(--tekst-cichy);
+}
+
+.hero-granica {
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  padding: 0.45rem 0.75rem;
+  background: var(--zloto-tlo);
+  border-left: 3px solid var(--zloto);
+  border-radius: 0 4px 4px 0;
+  display: inline-block;
+}
+
+.hero-szukaj,
+.szukaj-formularz {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 540px;
+}
+
+.hero-szukaj input,
+.szukaj-formularz input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--ramka-mocna);
+  border-radius: 5px;
+  background: var(--tlo);
+  color: var(--tekst);
+  font-size: 0.95rem;
+}
+
+.hero-szukaj button,
+.szukaj-formularz button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--akcent);
+  border-radius: 5px;
+  background: var(--akcent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero-szukaj button:hover,
+.szukaj-formularz button:hover {
+  background: var(--akcent-hover);
+}
+
+.siatka-kafli {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.kafel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.95rem 1.05rem;
+  background: var(--tlo-karty);
+  border: 1px solid var(--ramka);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--tekst);
+  box-shadow: var(--cien);
+  transition: border-color 0.15s, transform 0.12s;
+}
+
+.kafel:hover {
+  border-color: var(--akcent);
+  transform: translateY(-1px);
+}
+
+.kafel-hipotezy {
+  border-left: 3px solid var(--kol-hipoteza);
+}
+
+.kafel-liczba {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--akcent);
+}
+
+.kafel-hipotezy .kafel-liczba {
+  color: var(--kol-hipoteza);
+}
+
+.kafel-tytul {
+  font-size: 1rem;
+}
+
+.kafel-opis {
+  font-size: 0.82rem;
+  color: var(--tekst-cichy);
+  line-height: 1.4;
+}
+
+.siatka-home-dol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.1rem;
+}
+
+.siatka-kart {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.85rem;
+}
+
+.siatka-kart .boks {
+  margin-bottom: 0;
+}
+
+.karta-naglowek {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.karta-tytul {
+  font-weight: 700;
+  font-size: 1.03rem;
+}
+
+.karta-opis {
+  margin: 0.4rem 0 0;
+  font-size: 0.92rem;
+}
+
+.scena-nr {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  background: var(--zloto-tlo);
+  color: var(--zloto);
+}
+
+.rozdzial-oznaczenie {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  padding: 0.08rem 0.4rem;
+  border-radius: 3px;
+  background: var(--akcent-tlo);
+  color: var(--akcent);
+  font-weight: 700;
+}
+
+.znaczek-granica {
+  margin-left: 0.45rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  background: var(--zloto-tlo);
+  color: var(--zloto);
+  font-weight: 700;
+}
+
+.lista-scen-zrodlowa,
+.lista-prosta,
+.lista-hipotez,
+.lista-wynikow,
+.lista-rozdzialow-rozwinieta {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.lista-scen-zrodlowa li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.lista-boczna-hipotez {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.86rem;
+}
+
+/* Filtry */
+.filtry {
+  background: var(--tlo-karty);
+  border: 1px solid var(--ramka);
+  border-radius: 6px;
+  padding: 0.65rem 0.95rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.filtr-wiersz {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+}
+
+.filtr-etykieta {
+  color: var(--tekst-cichy);
+  font-weight: 600;
+  margin-right: 0.2rem;
+}
+
+.filtr-przycisk {
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--ramka);
+  text-decoration: none;
+  color: var(--tekst);
+}
+
+.filtr-przycisk.aktywny,
+.filtr-przycisk:hover {
+  background: var(--akcent);
+  border-color: var(--akcent);
+  color: #fff;
+}
+
+/* Chronologia */
+.chrono-rozdzial summary,
+.chrono-epizod summary {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.chrono-epizody {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.chrono-epizod {
+  border-left: 3px solid var(--ramka-mocna);
+  padding-left: 0.85rem;
+}
+
+.chrono-sceny {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.chrono-scena {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.chrono-scena-opis {
+  margin: 0.15rem 0 0;
+  font-size: 0.88rem;
+  color: var(--tekst-cichy);
+}
+
+/* Nawigacja dolna sceny */
+.nawigacja-sceny {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.9rem 1.1rem;
+  background: var(--tlo-karty);
+  border: 1px solid var(--ramka);
+  border-radius: 6px;
+}
+
+/* Legenda i tabele */
+.legenda-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.legenda-lista li {
+  padding: 0.55rem 0.85rem;
+  border-left: 4px solid var(--ramka);
+  border-radius: 0 4px 4px 0;
+}
+
+.tabela-owijka {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+th, td {
+  border: 1px solid var(--ramka);
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+}
+
+th {
+  background: var(--tlo-wypukle);
+}
+
+.stan-pusty {
+  background: var(--tlo-karty);
+  border: 1px dashed var(--ramka-mocna);
+  border-radius: 6px;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--tekst-cichy);
+}
+
+/* Stopka */
+.stopka-witryny {
+  border-top: 1px solid var(--ramka);
+  background: var(--tlo-karty);
+  padding: 1rem 1.25rem;
+  font-size: 0.84rem;
+  color: var(--tekst-cichy);
+}
+
+.stopka-wewn {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stopka-wewn nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
+}
