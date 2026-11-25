@@ -1,0 +1,18 @@
+{
+  "name": "lcdb",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Limbus Company — kronika opowieści: podróż przez Miasto scena po scenie, bez wyprzedzania historii",
+  "scripts": {
+    "test": "node tools/run-tests.mjs",
+    "build": "node tools/build.mjs",
+    "build:single": "node tools/build.mjs --single",
+    "serve": "node tools/serve.mjs",
+    "start": "node tools/serve.mjs",
+    "zapis": "node tools/sprawdz-zapis.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

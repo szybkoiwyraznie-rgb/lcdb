@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches-ignore: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sprawdz:
+    name: Testy i build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pobranie repozytorium (pełna historia — daty stron)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Testy integralności kroniki, języka i dokumentacji
+        run: npm test
+
+      - name: Kontrola dosłowności scen
+        run: npm run zapis
+
+      - name: Build artefaktu (powłoka + data/)
+        run: npm run build
+
+      - name: Build archiwum jednoplikowego
+        run: npm run build:single -- --out dist/jeden-plik.html && rm -f dist/jeden-plik.html
+
+      - name: Rozmiar artefaktu
+        run: |
+          test -f dist/index.html
+          test -d dist/data
+          ls -lh dist/index.html
