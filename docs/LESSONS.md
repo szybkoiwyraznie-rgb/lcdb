@@ -7,7 +7,7 @@ Ten plik zbiera wnioski z prowadzenia bliźniaczych kronik (`wwm`, `srw`) oraz s
 ## 1. Pułapki merytoryczne i bezspoilerowe
 
 ### 1.1. Zakaz „proroczych hipotez” z pamięci modelu o przyszłych Pieśniach
-- **Pułapka:** Model zna dalsze Pieśni (*Canto*), wiki *Limbus Company*, *Library of Ruina* i *Lobotomy Corporation* oraz zakończenia powieści pierwowzorów (np. *Skrzydeł* Yi Sanga, *Przemiany* Kafki, *Zbrodni i kary*, *Demiana*, *Moby Dicka*, *Wichrowych Wzgórz*, *Don Kichota*, *Snu czerwonego pawilonu*, *Obcego*, * pieśni o Rolandzie*, *Odysei*). Pokusa, by zapisać przyszły zwrot fabularny jako rzekomą hipotezę `{{model pewnosc=45}}`, niszczy sens kroniki równie skutecznie jak jawny spoiler.
+- **Pułapka:** Model zna dalsze Pieśni (*Canto*), wiki *Limbus Company*, *Library of Ruina* i *Lobotomy Corporation* oraz zakończenia powieści pierwowzorów (np. *Skrzydeł* Yi Sanga, *Przemiany* Kafki, *Zbrodni i kary*, *Demiana*, *Moby Dicka*, *Wichrowych Wzgórz*, *Don Kichota*, *Snu czerwonego pawilonu*, *Obcego*, *Pieśni o Rolandzie*, *Odysei*). Pokusa, by zapisać przyszły zwrot fabularny jako rzekomą hipotezę `{{model pewnosc=45}}`, niszczy sens kroniki równie skutecznie jak jawny spoiler.
 - **Zasada:** Hipoteza `{{model pewnosc=NN}}` może wynikać **wyłącznie z przesłanek obecnych w rozegranych dotąd scenach**. Jeśli wniosek nie da się obronić wskazanym zdaniem lub detalem z poznanych scen, nie wolno go pisać — niezależnie od podanego procentu pewności (ADR 0006, 0008).
 
 ### 1.2. Pierwowzór literacki oświetla teraźniejszość sceny, nie przyszłość postaci
