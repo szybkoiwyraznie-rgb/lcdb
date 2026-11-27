@@ -37,6 +37,7 @@ Materiały z czytanek *Limbus Company* posługują się kilkoma stałymi oznacze
 
 - `**Imię:** kwestia` oraz `**Imię** (*Tytuł / opis*): kwestia` — kwestie mówców (w tym postacie jeszcze nieznane z imienia, np. `**Wilk** (*???*):`).
 - `\<…>` — wypowiedzi zegara Dantego zapisywane w nawiasach ostrokątnych poprzedzonych znakiem `\` (silnik zachowuje dosłowność względem archiwum, a w widoku czytelniczym wyświetla czyste `<…>`).
+- `***` — słowo zatarte w pamięci mówiącego (np. `**Ja** (***):`, `gdy ryję ***…`); w widoku czytelniczym wyświetlane dosłownie jako wyciszone `***`, nigdy jako pogrubienie czy kursywa.
 - `<!-- S001B -->` — techniczne identyfikatory węzłów opowieści; pozostają nietknięte w archiwum i w `:::zapis`, a renderer ukrywa je przed czytelnikiem.
 - `*— Przed walką —*` / `*— Po walce —*` — znaczniki przejścia wewnątrz etapu; w widoku czytelniczym prezentowane są kursywą, ale nie rozbijają sztucznie narracji w liczniku elementów sceny.
 

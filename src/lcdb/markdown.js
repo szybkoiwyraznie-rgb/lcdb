@@ -377,7 +377,10 @@ export function renderMarkdown(md, {
     // Mowa zegara Dantego w czytankach zapisywana jest jako `\<…>`: zdejmujemy backslash przed `<` i `>`,
     // zanim `escapeHtml` bezpiecznie zamieni nawiasy ostrokątne na encje HTML.
     const odblokowany = String(tekst).replace(/\\([<>])/g, '$1');
-    let t = escapeHtml(odblokowany);
+    // Słowa zatarte w zapisie (`***` stojące samodzielnie, np. „gdy ryję ***…”, „(***)”) chronimy
+    // przed regułami pogrubienia i kursywy — inaczej dwa takie miejsca w jednej linii sklejają się
+    // w fałszywe `<strong>`/`<em>` (ADR 0009, LESSONS 2.1).
+    let t = escapeHtml(odblokowany).replace(ZATARTE_RE, ZATARTE_ZNACZNIK);
 
     t = t.replace(WIKILINK_RE, (_caly, slugRaw, etykietaRaw) => {
       const slug = slugRaw.trim();
@@ -405,10 +408,19 @@ export function renderMarkdown(md, {
     t = t.replace(/`([^`]+)`/g, '<code>$1</code>');
     t = t.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
     t = t.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+    t = t.replaceAll(ZATARTE_ZNACZNIK, ZATARTE_HTML);
 
     return t;
   }
 }
+
+/**
+ * Zatarte słowo w zapisie opowieści: trzy gwiazdki niesąsiadujące z literą, cyfrą ani kolejną gwiazdką.
+ * `***słowo***` (pogrubiona kursywa) nie jest zatarciem, bo gwiazdki przylegają do liter.
+ */
+export const ZATARTE_RE = /(?<![\p{L}\p{N}*])\*{3}(?![\p{L}\p{N}*])/gu;
+const ZATARTE_ZNACZNIK = '\u0002';
+const ZATARTE_HTML = '<span class="zatarte" title="słowo zatarte">***</span>';
 
 const ETYKIETY_POCHODZENIA = {
   dostawa: 'z opowieści',

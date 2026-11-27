@@ -37,6 +37,11 @@ Ten plik zbiera wnioski z prowadzenia bliźniaczych kronik (`wwm`, `srw`) oraz s
 ### 2.1. Konwencje zapisu Limbus Company w `:::zapis`
 - W blokach `:::zapis` wklejaj tekst z `rozgrywka/zapisy/*.md` **bez żadnych poprawek** (nawet razem z `<!-- S001B -->` i `\<…>`).
 - Renderer sam ukrywa komentarze `<!-- … -->` i zdejmuje backslash sprzed nawiasów mowy zegara Dantego (`\<…>` → `<…>`), natomiast `sprawdzWiernoscSceny` porównuje surową zawartość `:::zapis` z plikiem archiwum. Ręczne skasowanie komentarza lub `\` w `:::zapis` bez zmiany archiwum zerwie dosłowność podciągu!
+- **Słowa zatarte `***`** (np. `**Ja** (***): … gdy ryję ***…`) to część opowieści — wymazane fragmenty pamięci Dantego. Renderer chroni każde samodzielne `***` (`ZATARTE_RE`) przed regułami pogrubienia i kursywy i wyświetla je jako wyciszone `<span class="zatarte">`; wcześniej dwa takie miejsca w jednej linii sklejały się w fałszywe `<strong>`/`<em>`. Nie zamieniaj ich na `\*\*\*` ani inne znaki.
+
+### 2.1a. Czytanki mają dialog bez pustych linii i końce linii CRLF
+- Polskie czytanki z Dysku Google zapisują cały etap przed starciem jako jeden ciąg kwestii oddzielonych pojedynczym `\n` i przychodzą z końcami linii `\r\n`. Przy archiwizacji w `rozgrywka/zapisy/` zamieniamy wyłącznie `CRLF → LF` (wymóg `.gitattributes`; porównanie dosłowności i tak normalizuje białe znaki) — żadnych innych zmian.
+- Ten sam ciąg kwestii wolno pociąć na kilka bloków `:::zapis` w kolejnych podsekcjach `###` lub w dwóch scenach. Pokrycie archiwum `npm run zapis` liczy się wierszami (`niepokryteWierszeZapisu`), więc cięcie w środku „akapitu” nie daje fałszywych alarmów.
 
 ### 2.2. Kreska pionowa `|` w tabelach markdown i wikilinkach
 - Wewnątrz tabeli markdown wikilink z etykietą `[[slug|etykieta]]` działa bez uciekania, bo `podzielKomorki` rozpoznaje parę `[[…]]`. Zwykły znak `|` w tekście komórki poprzedź ukośnikiem `\|`.

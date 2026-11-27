@@ -8,7 +8,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { wczytajStrony, wczytajZapisy } from './content-loader.mjs';
-import { sprawdzWiernoscSceny, wytnijBlokiZapisu, normalizujTekst } from '../src/lcdb/registry.js';
+import { sprawdzWiernoscSceny, wytnijBlokiZapisu, niepokryteWierszeZapisu } from '../src/lcdb/registry.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const filtr = process.argv[2];
@@ -35,19 +35,23 @@ for (const s of wybrane) {
   }
 }
 
-const uzyte = new Set();
-for (const s of strony) for (const b of wytnijBlokiZapisu(s.body)) uzyte.add(normalizujTekst(b));
+// Pokrycie archiwum liczone wierszami (czytanki LC mają ciągi kwestii bez pustych linii — ADR 0009).
+const blokiWgZapisu = new Map();
+for (const s of strony) {
+  if (!s.zapis) continue;
+  const klucz = `rozgrywka/zapisy/${path.basename(s.zapis)}`;
+  if (!blokiWgZapisu.has(klucz)) blokiWgZapisu.set(klucz, []);
+  blokiWgZapisu.get(klucz).push(...wytnijBlokiZapisu(s.body));
+}
 
 for (const [sciezka, tekst] of zapisy) {
-  const akapity = String(tekst)
-    .split(/\n{2,}/)
-    .map(normalizujTekst)
-    .filter((a) => a.length > 40 && !/^<!--[\s\S]*-->$/.test(a) && !/^#/.test(a));
-  const pominiete = akapity.filter((a) => ![...uzyte].some((u) => u.includes(a)));
+  const pominiete = niepokryteWierszeZapisu(tekst, blokiWgZapisu.get(sciezka) ?? []);
   if (pominiete.length > 0) {
-    console.log(`\n${sciezka}: ${pominiete.length} akapit(ów) archiwum poza scenami:`);
-    for (const a of pominiete.slice(0, 10)) console.log(`  · ${a.slice(0, 110)}…`);
+    console.log(`\n${sciezka}: ${pominiete.length} wiersz(y) archiwum poza scenami:`);
+    for (const w of pominiete.slice(0, 10)) console.log(`  · ${w.slice(0, 110)}${w.length > 110 ? '…' : ''}`);
     if (pominiete.length > 10) console.log(`  … i ${pominiete.length - 10} więcej`);
+  } else {
+    console.log(`✓ ${sciezka} — każdy wiersz archiwum należy do którejś sceny`);
   }
 }
 

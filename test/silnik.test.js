@@ -12,6 +12,7 @@ import {
 } from '../src/lcdb/markdown.js';
 import {
   policzElementySceny, walidujStrone, sprawdzGraniceFabuly, sprawdzWiernoscSceny, zbudujRejestr,
+  niepokryteWierszeZapisu,
 } from '../src/lcdb/registry.js';
 import { historiaInterpretacjiHtml } from '../src/lcdb/render.js';
 import { generatorIdBoksow, spisBoksowHtml } from '../src/lcdb/spis-boksow.js';
@@ -204,4 +205,40 @@ test('historiaInterpretacjiHtml oraz spisBoksowHtml renderują ślad rewizji i s
     spisBoksowHtml([{ id: a, tytul: 'Opis' }, { id: b, tytul: 'W opowieści' }], '#/postac/dante'),
     /class="spis-boksow"/,
   );
+});
+
+test('zatarte słowa *** w zapisie nie są brane za pogrubienie ani kursywę, a ***słowo*** nadal jest formatowaniem', () => {
+  const md = `{{dostawa
+:::zapis
+**Ja** (***): Jak śmiecie… w chwili, gdy ryję ***… Postradaliście zmysły…
+**Ja:** Gdzie jest ***, tego nigdy…
+*— Przed walką —*
+:::
+}}`;
+  const out = renderMarkdown(md, { wymagajPoziomu: true });
+  assert.deepEqual(out.problemy, []);
+  assert.equal((out.html.match(/class="zatarte"/g) ?? []).length, 3, 'każde z trzech zatarć jest osobnym znacznikiem');
+  assert.match(out.html, /<strong>Ja<\/strong> \(<span class="zatarte"[^>]*>\*\*\*<\/span>\): Jak śmiecie/);
+  assert.doesNotMatch(out.html, /<strong>\): Jak/, 'zatarcie w nawiasie nie otwiera fałszywego pogrubienia');
+  assert.match(out.html, /<em>— Przed walką —<\/em>/);
+  assert.equal(policzElementySceny(md).kwestie, 2, 'etykieta mówcy z (***) nadal jest kwestią');
+
+  const formatowanie = renderMarkdown('{{opracowanie\nTo ***ważne*** zdanie.\n}}', { wymagajPoziomu: true });
+  assert.match(formatowanie.html, /<em><strong>ważne<\/strong><\/em>/);
+  assert.doesNotMatch(formatowanie.html, /class="zatarte"/);
+});
+
+test('pokrycie archiwum zapisu liczone wierszami wskazuje dokładnie pominięte kwestie', () => {
+  const archiwum = [
+    '# Nagłówek czytanki',
+    '<!-- S001B -->',
+    '**Wilk** (*???*): Pierwsza kwestia.',
+    '**Lew:** Druga kwestia.',
+    '**Pantera:** Trzecia kwestia.',
+    '',
+    'Narracja po pustej linii.',
+  ].join('\r\n');
+  const bloki = ['**Wilk** (*???*): Pierwsza kwestia.\n**Lew:** Druga kwestia.', 'Narracja po pustej linii.'];
+  assert.deepEqual(niepokryteWierszeZapisu(archiwum, bloki), ['**Pantera:** Trzecia kwestia.']);
+  assert.deepEqual(niepokryteWierszeZapisu(archiwum, [...bloki, '**Pantera:** Trzecia kwestia.']), []);
 });

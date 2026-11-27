@@ -510,6 +510,24 @@ export function sprawdzWiernoscSceny(strona, tekstZapisu) {
   return problemy;
 }
 
+/**
+ * Pokrycie archiwum zapisu przez bloki `:::zapis` scen (ADR 0009), liczone **wierszami**.
+ *
+ * Czytanki Limbus Company zapisują całe ciągi kwestii bez pustych linii między nimi, więc jeden
+ * „akapit” archiwum potrafi obejmować kilka scen lub podsekcji. Dlatego sprawdzamy każdy niepusty
+ * wiersz osobno: wiersz jest pokryty, jeśli (po normalizacji białych znaków) zawiera go któryś blok.
+ * Pomijamy komentarze węzłów `<!-- … -->` i nagłówki `#`, które renderer i tak ukrywa lub zastępuje.
+ * Zwraca listę niepokrytych wierszy w kolejności archiwum (pusta = komplet).
+ */
+export function niepokryteWierszeZapisu(tekstZapisu, bloki = []) {
+  const uzyte = bloki.map(normalizujTekst).filter((b) => b !== '');
+  return String(tekstZapisu ?? '')
+    .split(/\r?\n/)
+    .map(normalizujTekst)
+    .filter((w) => w !== '' && !/^<!--[\s\S]*-->$/.test(w) && !/^#{1,6}\s/.test(w))
+    .filter((w) => !uzyte.some((u) => u.includes(w)));
+}
+
 /** Brama twardej granicy fabuły (ADR 0008). */
 export function sprawdzGraniceFabuly(sceny, postep) {
   const problemy = [];

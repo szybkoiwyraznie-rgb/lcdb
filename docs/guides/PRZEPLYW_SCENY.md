@@ -73,4 +73,4 @@ npm test
 npm run zapis
 npm run build
 ```
-Sprawdź w oknie `npm run zapis`, czy w opracowanym pliku z `rozgrywka/zapisy/` nie zostały przypadkiem pominięte akapity dialogu lub narracji. Gdy komplet bram świeci na zielono — zrób commit i natychmiast `git push`.
+Sprawdź w oknie `npm run zapis`, czy w opracowanym pliku z `rozgrywka/zapisy/` nie zostały przypadkiem pominięte wiersze dialogu lub narracji (pokrycie liczone jest **wierszami**, bo czytanki zapisują całe ciągi kwestii bez pustych linii — `niepokryteWierszeZapisu`). Po pełnym opracowaniu archiwum narzędzie wypisuje `✓ … każdy wiersz archiwum należy do którejś sceny`. Gdy komplet bram świeci na zielono — zrób commit i natychmiast `git push`.
