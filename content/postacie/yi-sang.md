@@ -3,7 +3,7 @@ typ: postac
 slug: yi-sang
 tytul: Yi Sang
 tytul_kr: 이상
-rola: sojusznik
+rola: grzesznik
 pierwsze_wystapienie: kontrakt-w-ciemnym-lesie
 miejsca: [autobus, ciemny-las]
 watki: [kim-sa-przybysze-z-autobusu]
@@ -26,6 +26,13 @@ Zdanie pada tuż po kontrakcie, jako odpowiedź na pytanie, czy to już wszystko
 {{opracowanie
 Przegraną walkę Yi Sang podsumowuje oszczędnie, rozbijając zdanie na dwie kwestie: „To… …dalekie od ideału”. Zaraz potem milknie ([[czas-ktory-da-sie-cofnac|Czas, który da się cofnąć]]).
 }}
+
+## Grzesznik
+
+{{opracowanie
+W objaśnieniach towarzyszących pierwszemu starciu ci, którym [[dante|Dante]] wydaje rozkazy w walce, nazywani są Grzesznikami. Miano obejmuje siedmioro przybyszów z [[autobus|autobusu]], a więc także Yi Sanga. Fabuła nie wyjaśniła jeszcze, skąd to miano ([[kim-sa-przybysze-z-autobusu|Kim są przybysze z autobusu?]]).
+}}
+
 
 ## Imię
 

@@ -37,6 +37,13 @@ Faust od pierwszego zdania wie więcej, niż mówi. Wita Dantego zdaniem o „po
 Po przegranej walce Faust nie okazuje ani skruchy, ani strachu. Na wyrzut Dantego odpowiada „Nie mówiłam, że wygramy”, a pytana o „asa w rękawie” mówi tylko: „…idziemy za gwiazdą”. Zostaje na placu sama ([[czas-ktory-da-sie-cofnac|Czas, który da się cofnąć]]).
 }}
 
+## Wśród Grzeszników
+
+{{opracowanie
+Faust mówi o przybyszach w pierwszej osobie liczby mnogiej („od tej chwili należymy do pańskiego czasu”) i sama staje do walki — po porażce stwierdza: „I zostałam tylko ja”. Objaśnienia towarzyszące pierwszemu starciu nazywają tych, którym Dante wydaje rozkazy, Grzesznikami. Faust należy więc do nich, choć to ona prowadzi Dantego przez kontrakt i objaśnia mu położenie.
+}}
+
+
 ## Imię
 
 {{model

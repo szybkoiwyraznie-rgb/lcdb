@@ -135,7 +135,7 @@ Każda niezgodność z tym schematem przerywa `npm run build` i `npm test`.
 Każdy boks otwierany jest nagłówkiem `## Tytuł sekcji`, a każdy akapit, lista, tabela lub cytat wewnątrz boksu **musi** leżeć wewnątrz bloku pochodzenia otwieranego osobną linią `{{pochodzenie …` i zamykanego osobną linią `}}`:
 
 1. **`{{dostawa`** — dosłowne słowa z materiału opowieści (w tym bloki `:::zapis … :::`, cytaty z *Notatek Dantego*, akt Grzeszników i logów obserwacyjnych).
-2. **`{{opracowanie`** — streszczenie i wnioski wynikające bezpośrednio i jednoznacznie z poznanych scen.
+2. **`{{opracowanie`** — streszczenie i wnioski wynikające bezpośrednio i jednoznacznie z poznanych scen. Także nazwy i tytuły świata wzięte ze wskazówek towarzyszących walce — zawsze z jawnym wskazaniem tego źródła w zdaniu (ADR 0016).
 3. **`{{kwerenda`** — twierdzenie zewnętrzne (literackie, historyczne, językowe) potwierdzone sprawdzonym źródłem. **Wymaga** co najmniej jednej dyrektywy inline:
    ```markdown
    {{kwerenda

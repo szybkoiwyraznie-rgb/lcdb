@@ -2,7 +2,7 @@
 typ: postac
 slug: rodion
 tytul: Rodion
-rola: sojusznik
+rola: grzesznik
 pierwsze_wystapienie: kontrakt-w-ciemnym-lesie
 miejsca: [autobus, ciemny-las]
 watki: [kim-sa-przybysze-z-autobusu]
@@ -22,6 +22,13 @@ Przybyszka z [[autobus|autobusu]], swobodna i hałaśliwa. Po zawarciu [[kontrak
 {{opracowanie
 Rodion pada, zanim zdążyła się rozkręcić: „Żartujecie sobie? Ja nawet nie zaczęłam…” ([[czas-ktory-da-sie-cofnac|Czas, który da się cofnąć]]).
 }}
+
+## Grzesznik
+
+{{opracowanie
+W objaśnieniach towarzyszących pierwszemu starciu ci, którym [[dante|Dante]] wydaje rozkazy w walce, nazywani są Grzesznikami. Miano obejmuje siedmioro przybyszów z [[autobus|autobusu]], a więc także Rodion. Fabuła nie wyjaśniła jeszcze, skąd to miano ([[kim-sa-przybysze-z-autobusu|Kim są przybysze z autobusu?]]).
+}}
+
 
 ## Imię
 

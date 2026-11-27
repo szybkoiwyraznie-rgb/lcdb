@@ -16,7 +16,7 @@ utworzono: 2026-11-27
 }}
 
 {{opracowanie
-Pojazd, który wjeżdża do [[ciemny-las|ciemnego lasu]] w chwili, gdy [[wilk|Wilk]] ma dobić [[dante|Dantego]]. Zabójcy biorą go najpierw za zwierzę, potem za zabłąkany wóz — dopóki nie odrzuca [[lew|Lwa]]. Wysiada z niego siedmioro [[kim-sa-przybysze-z-autobusu|przybyszów]]: [[faust|Faust]], [[ishmael|Ishmael]], [[yi-sang|Yi Sang]], [[rodion|Rodion]], [[gregor|Gregor]], [[outis|Outis]] i [[heathcliff|Heathcliff]].
+Pojazd, który wjeżdża do [[ciemny-las|ciemnego lasu]] w chwili, gdy [[wilk|Wilk]] ma dobić [[dante|Dantego]]. Zabójcy biorą go najpierw za zwierzę, potem za zabłąkany wóz — dopóki nie odrzuca [[lew|Lwa]]. Wysiada z niego siedmioro [[kim-sa-przybysze-z-autobusu|przybyszów]]: [[faust|Faust]], [[ishmael|Ishmael]], [[yi-sang|Yi Sang]], [[rodion|Rodion]], [[gregor|Gregor]], [[outis|Outis]] i [[heathcliff|Heathcliff]]. W objaśnieniach towarzyszących pierwszemu starciu siedmioro to nazywani są Grzesznikami.
 }}
 
 {{opracowanie

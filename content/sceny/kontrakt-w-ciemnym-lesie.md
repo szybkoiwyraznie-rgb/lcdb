@@ -202,6 +202,8 @@ Faust zauważa, że Dante „zdążył ukryć głowę” przed napaścią. Na py
 Po wyjaśnieniach Dante podsumowuje układ: obcy ludzie będą walczyć za niego, „o ile wyda im pan właściwe rozkazy”. Wybucha gniewem („wybijmy te cholerne gnoje… Wrócę i…”), lecz [[utracona-pamiec-dantego|pamięć]] urywa mu się w pół zdania. Czuje tylko, że stał „u progu niezwykle ważnej chwili”, której nie wolno mu zapomnieć. Faust tłumaczy to głową, z którą „pamięć nie może być w całości”.
 
 Przybysze nie stanowią zgranej drużyny: Outis domaga się formalnego rozkazu i nie wie, jak tytułować nowego dowódcę („Panie Zegarowy Dowódco…?”). Gregor uważa, że „każdy musi się bić na własną rękę”, [[heathcliff|Heathcliff]] chce „rozwalić wszystko”, a Ishmael nie nadąża. Dante przyjmuje rolę dowódcy bez entuzjazmu: „I tak nie mam innego wyjścia”.
+
+Tytuł, którego szukała Outis, podają objaśnienia towarzyszące temu starciu. Dante jest w nich Kierownikiem, a siedmioro z autobusu — [[kim-sa-przybysze-z-autobusu|Grzesznikami]], którym wydaje rozkazy.
 }}
 
 {{model pewnosc=70 pytanie="Czy zatarte słowa *** w mowie Dantego to wspomnienia gasnące na bieżąco?"

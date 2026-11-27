@@ -2,7 +2,7 @@
 typ: postac
 slug: ishmael
 tytul: Ishmael
-rola: sojusznik
+rola: grzesznik
 pierwsze_wystapienie: kontrakt-w-ciemnym-lesie
 miejsca: [autobus, ciemny-las]
 watki: [kim-sa-przybysze-z-autobusu]
@@ -21,6 +21,13 @@ Jedna z przybyszów z [[autobus|autobusu]], mówiąca o sobie w rodzaju żeński
 {{opracowanie
 Zanim padnie, Ishmael zdąży jeszcze powiedzieć: „Od początku uważałam, że ta walka nie ma sensu” — sceptycyzm, z którym witała Dantego, okazuje się trafny ([[czas-ktory-da-sie-cofnac|Czas, który da się cofnąć]]).
 }}
+
+## Grzesznik
+
+{{opracowanie
+W objaśnieniach towarzyszących pierwszemu starciu ci, którym [[dante|Dante]] wydaje rozkazy w walce, nazywani są Grzesznikami. Miano obejmuje siedmioro przybyszów z [[autobus|autobusu]], a więc także Ishmael. Fabuła nie wyjaśniła jeszcze, skąd to miano ([[kim-sa-przybysze-z-autobusu|Kim są przybysze z autobusu?]]).
+}}
+
 
 ## Imię
 

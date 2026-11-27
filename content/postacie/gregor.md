@@ -2,7 +2,7 @@
 typ: postac
 slug: gregor
 tytul: Gregor
-rola: sojusznik
+rola: grzesznik
 pierwsze_wystapienie: kontrakt-w-ciemnym-lesie
 miejsca: [autobus, ciemny-las]
 watki: [kim-sa-przybysze-z-autobusu]
@@ -21,6 +21,13 @@ Przybysz z [[autobus|autobusu]], mówiący potocznie i z rezerwą wobec rozkazó
 {{opracowanie
 Gdy walka się nie układa, Gregor próbuje zawrzeć rozejm: „Głupio to mówić komuś, z kim się przed chwilą biło, ale to by się dało załatwić po dobroci…”. Nie kończy zdania — pada w pół słowa ([[czas-ktory-da-sie-cofnac|Czas, który da się cofnąć]]).
 }}
+
+## Grzesznik
+
+{{opracowanie
+W objaśnieniach towarzyszących pierwszemu starciu ci, którym [[dante|Dante]] wydaje rozkazy w walce, nazywani są Grzesznikami. Miano obejmuje siedmioro przybyszów z [[autobus|autobusu]], a więc także Gregora. Fabuła nie wyjaśniła jeszcze, skąd to miano ([[kim-sa-przybysze-z-autobusu|Kim są przybysze z autobusu?]]).
+}}
+
 
 ## Imię
 

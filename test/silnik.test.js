@@ -12,7 +12,7 @@ import {
 } from '../src/lcdb/markdown.js';
 import {
   policzElementySceny, walidujStrone, sprawdzGraniceFabuly, sprawdzWiernoscSceny, zbudujRejestr,
-  niepokryteWierszeZapisu,
+  niepokryteWierszeZapisu, czyArchiwumWskazowek,
 } from '../src/lcdb/registry.js';
 import { historiaInterpretacjiHtml } from '../src/lcdb/render.js';
 import { generatorIdBoksow, spisBoksowHtml } from '../src/lcdb/spis-boksow.js';
@@ -241,4 +241,14 @@ test('pokrycie archiwum zapisu liczone wierszami wskazuje dokładnie pominięte 
   const bloki = ['**Wilk** (*???*): Pierwsza kwestia.\n**Lew:** Druga kwestia.', 'Narracja po pustej linii.'];
   assert.deepEqual(niepokryteWierszeZapisu(archiwum, bloki), ['**Pantera:** Trzecia kwestia.']);
   assert.deepEqual(niepokryteWierszeZapisu(archiwum, [...bloki, '**Pantera:** Trzecia kwestia.']), []);
+});
+
+test('archiwum wskazówek (ADR 0016) rozpoznaje się po nazwie i nie może być podstawą sceny', () => {
+  assert.equal(czyArchiwumWskazowek('rozgrywka/zapisy/2026-11-27-002-prolog-etap-0-1-wskazowki.md'), true);
+  assert.equal(czyArchiwumWskazowek('rozgrywka/zapisy/2026-11-27-001-prolog-etap-0-1.md'), false);
+  const p = sprawdzWiernoscSceny(
+    { typ: 'scena', slug: 'scena-x', zapis: 'rozgrywka/zapisy/2026-11-27-002-x-wskazowki.md', body: ':::zapis\nZdanie.\n:::' },
+    'Zdanie.',
+  );
+  assert.ok(p.some((x) => /archiwum wskazówek/.test(x)));
 });

@@ -491,10 +491,24 @@ export function walidujInterpretacje(strona, sekcje = null) {
   return problemy;
 }
 
+/**
+ * Archiwum wskazówek (ADR 0016): objaśnienia towarzyszące walce, przekazywane w dostawie osobno od fabuły.
+ * Rozpoznawane po nazwie pliku `…-wskazowki.md`. Archiwum wskazówek nie jest podstawą żadnej sceny
+ * i nie podlega kontroli pokrycia — służy tylko jako źródło nazw i obrazów świata dla kart.
+ */
+export const WSKAZOWKI_RE = /-wskazowki\.md$/;
+
+export function czyArchiwumWskazowek(sciezka) {
+  return WSKAZOWKI_RE.test(String(sciezka ?? ''));
+}
+
 /** Wierność zapisu sceny (ADR 0009): każdy blok `:::zapis` musi być dosłownym fragmentem archiwum rozgrywki. */
 export function sprawdzWiernoscSceny(strona, tekstZapisu) {
   if (strona.typ !== 'scena') return [];
   const gdzie = strona.slug;
+  if (czyArchiwumWskazowek(strona.zapis)) {
+    return [`${gdzie}: scena nie może opierać się na archiwum wskazówek "${strona.zapis}" — treść sceny pochodzi wyłącznie z zapisu fabuły (ADR 0016)`];
+  }
   if (tekstZapisu == null) return [`${gdzie}: brak archiwum zapisu, nie da się sprawdzić dosłowności sceny`];
   const bloki = wytnijBlokiZapisu(strona.body);
   if (bloki.length === 0) return [`${gdzie}: brak bloku :::zapis z treścią sceny`];

@@ -29,6 +29,8 @@ RRRR-MM-DD-<nr>-<krotki-slug>.md
 
 np. `2026-11-26-001-prolog-las-mroku.md`, `2026-11-27-001-canto-1-wyrzutek.md`.
 
+Wskazówki towarzyszące walce (objaśnienia sterowania przekazane osobno lub po znaczniku `*— Wskazówki —*`) archiwizujemy dosłownie w osobnym pliku z końcówką `-wskazowki.md`, np. `2026-11-27-002-prolog-selva-oscura-etap-0-1-wskazowki.md`. Takie archiwum nie jest podstawą żadnej sceny i nie podlega kontroli pokrycia; służy jako źródło nazw i obrazów świata (ADR 0016).
+
 ---
 
 ## Konwencje zapisu dialogów *Limbus Company*

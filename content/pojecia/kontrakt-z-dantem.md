@@ -7,7 +7,7 @@ postacie: [dante, faust, rodion, mezczyzna-o-czerwonych-oczach]
 miejsca: [ciemny-las]
 watki: [kim-sa-przybysze-z-autobusu, utracona-pamiec-dantego, gdzie-jest-gwiazda, kim-jest-mezczyzna-o-czerwonych-oczach]
 konteksty: [boska-komedia, faust-goethego]
-tagi: [kontrakt, gwiazda, czas]
+tagi: [kontrakt, gwiazda, czas, grzesznicy]
 utworzono: 2026-11-27
 interpretacje:
   - data: "2026-11-27 18:00"
@@ -43,4 +43,14 @@ Według Faust od tej chwili przybysze „należą do czasu” Dantego. To, czy i
 
 {{model pewnosc=75 pytanie="Czy kontrakt daje Dantemu władzę nad życiem i śmiercią przybyszów?"
 Po walce przybysze padają jeden po drugim, a chwilę później, gdy Dantego rozrywa ból, ich ciała „przedziwnie odzyskują dawny kształt”. Nieznajomy o czerwonych oczach mówi przy tym o „czasie, który da się cofnąć”. Słowa Faust o sercach, które „będą bić, czy staną”, zależnie od godziny wskazanej przez Dantego, nabierają więc dosłownego sensu: przez kontrakt czas przybyszów da się cofnąć — a płaci za to Dante własnym cierpieniem („Odtąd będzie piekielnie bolało”). Nie wiadomo jeszcze, czy Dante może to robić z własnej woli. Wiadomo za to, że kontrakt nie obiecuje zwycięstwa — Faust: „Nie mówiłam, że wygramy”.
+}}
+
+## Łańcuch i zębatki
+
+{{opracowanie
+W objaśnieniach towarzyszących pierwszemu starciu rozkaz dla Grzeszników wydaje się, przeprowadzając łańcuch od lewej zębatki przez kolejnych z nich aż do prawej zębatki.
+}}
+
+{{model pewnosc=40 pytanie="Czy łańcuch rozkazu to ten sam łańcuch, który Dante poczuł przy zawarciu kontraktu?"
+Obrazy się zbiegają. Przy kontrakcie Dante czuje, jakby przeszywało go „naraz wiele łańcuchów” — albo jakby to on był na nie nawlekany. Ma też zegar zamiast głowy, czyli mechanizm z zębatek. A rozkaz w walce to łańcuch przeciągnięty między zębatkami przez wszystkich Grzeszników. Można to czytać jako jedną więź widzianą z dwóch stron: od środka, jako ból Dantego, i od zewnątrz, jako sposób wydawania rozkazów. Opowieść nie łączy jednak tych obrazów wprost — stąd niska pewność.
 }}

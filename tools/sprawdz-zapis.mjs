@@ -8,7 +8,9 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { wczytajStrony, wczytajZapisy } from './content-loader.mjs';
-import { sprawdzWiernoscSceny, wytnijBlokiZapisu, niepokryteWierszeZapisu } from '../src/lcdb/registry.js';
+import {
+  sprawdzWiernoscSceny, wytnijBlokiZapisu, niepokryteWierszeZapisu, czyArchiwumWskazowek,
+} from '../src/lcdb/registry.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const filtr = process.argv[2];
@@ -45,6 +47,10 @@ for (const s of strony) {
 }
 
 for (const [sciezka, tekst] of zapisy) {
+  if (czyArchiwumWskazowek(sciezka)) {
+    console.log(`✓ ${sciezka} — archiwum wskazówek, poza pokryciem scen (ADR 0016)`);
+    continue;
+  }
   const pominiete = niepokryteWierszeZapisu(tekst, blokiWgZapisu.get(sciezka) ?? []);
   if (pominiete.length > 0) {
     console.log(`\n${sciezka}: ${pominiete.length} wiersz(y) archiwum poza scenami:`);

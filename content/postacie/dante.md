@@ -48,6 +48,19 @@ Faust tłumaczy luki w pamięci głową. Najostrzejsze zerwanie przychodzi jedna
 Po przegranej walce Dante sam łączy swoją niepamięć z [[kontrakt-z-dantem|kontraktem]]: „Odkąd powtórzyłem jej słowa, nie pamiętam nic z przeszłości”. Gdy zostaje bez obrońców, pyta wprost: „Czyli… tak umrę?”.
 }}
 
+## Kierownik
+
+{{dostawa
+:::zapis
+Właśnie w ten sposób walka toczy się pod dyktando rozkazów Kierownika.
+:::
+}}
+
+{{opracowanie
+W dialogu nikt nie nadaje Dantemu tytułu. [[faust|Faust]] mówi do niego „pan”, a [[outis|Outis]] dopiero szuka właściwego słowa („Zega… ekhm”, „Panie Zegarowy Dowódco…?”). Objaśnienia towarzyszące pierwszemu starciu nazywają go wprost Kierownikiem, a tych, którym wydaje rozkazy — Grzesznikami. Tak też układa się zależność zawarta w [[kontrakt-z-dantem|kontrakcie]]: siedmioro z [[autobus|autobusu]] walczy za Dantego, „o ile wyda im pan właściwe rozkazy”.
+}}
+
+
 ## Imię
 
 {{model

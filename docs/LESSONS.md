@@ -38,6 +38,10 @@ Ten plik zbiera wnioski z prowadzenia bliźniaczych kronik (`wwm`, `srw`) oraz s
 - **Pułapka:** Nadpisanie starego bloku `{{model pewnosc=…}}` nowym wnioskiem bez śladu kasuje pamięć o tym, jak opowieść zwodziła lub odsłaniała karty.
 - **Zasada:** Przed zmianą merytoryczną interpretacji skopiuj jej dotychczasowe brzmienie **słowo w słowo** do pola `interpretacje:` (`fragment: <tytuł sekcji ##>`, `poprzednio: |`). Silnik sam wyrenderuje pod tą sekcją zwijany blok *Poprzednia wersja* (ADR 0007).
 
+
+### 1.7. Wskazówki walki: nazwy tak, mechanika nie
+- **Pułapka:** Objaśnienia sterowania wyglądają na czystą mechanikę i łatwo je wyrzucić w całości — a to w nich po raz pierwszy padają nazwy „Grzesznicy” i „Kierownik”, których dialog Etapu 0-1 nie używa. Odwrotny błąd: wkleić je do treści sceny, razem z „panelem dowodzenia” i „umiejętnościami”.
+- **Zasada:** Archiwizuj je osobno (`…-wskazowki.md`), nie wiąż z żadną sceną, a do kart przenoś tylko nazwy, tytuły i obrazy — z jawnym źródłem w zdaniu i z pierwszeństwem fabuły, gdy ta powie coś innego (ADR 0016).
 ---
 
 ## 2. Pułapki techniczne silnika i środowiska
