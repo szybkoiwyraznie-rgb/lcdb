@@ -78,7 +78,7 @@ Zanim przejdziesz do właściwej pracy, otwórz PR z bieżącej gałęzi do `mai
 ### A. Pętla dostawy fabularnej (szczegóły w [`docs/guides/PRZEPLYW_SCENY.md`](docs/guides/PRZEPLYW_SCENY.md))
 
 1. **Rozpoznaj zakres dostawy.** Ustal dokładnie, które sceny właściciel już rozegrał i wskazał do opracowania. Jeśli pobierasz paczkę z Dysku Google (np. czytanki, zrzut zbieracza `LC_DANE_*.zip`, karty Tożsamości/E.G.O), wypakuj ją **poza repozytorium** (`/tmp/...`) i czytaj wyłącznie pliki odpowiadające rozegranemu zakresowi — nigdy nie zaglądaj do dalszych rozdziałów!
-2. **Przy pierwszej prawdziwej dostawie** usuń zaślepkę techniczną (`grep -rl zaslepka content/ rozgrywka/`).
+2. **Zaślepka techniczna jest już usunięta** (pierwsza prawdziwa dostawa LC_0_1, 2026-11-27). Kontrola `grep -rl zaslepka content/ rozgrywka/` ma zwracać pustą listę.
 3. **Zapisz surowy zapis** rozegranych wydarzeń w `rozgrywka/zapisy/` (plik archiwalny jest od tej chwili nietykalny).
 4. **Podziel materiał na sceny** według wydarzeń fabularnych (wspólne miejsce, czas i rozmowa — ADR 0009), osadź dosłowne cytaty w `:::zapis`, napisz analizę z `sekcje_analizy`, zaktualizuj karty rozdziału, epizodu, postaci, frakcji, dzielnic, miejsc, wątków, kontekstów literackich i pojęć.
 5. **Sprawdź dotychczasowe hipotezy.** Jeśli nowa scena potwierdza, zawęża lub obala wcześniejsze `{{model pewnosc=…}}`, przenieś dosłowne stare brzmienie do `interpretacje:` we frontmatterze (ADR 0007).

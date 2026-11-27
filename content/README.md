@@ -27,4 +27,4 @@ Dodatkowo plik **`content/co-nowego.md`** prowadzi zwięzły dziennik nowych ods
 
 - Pełny wykaz pól, słowników zamkniętych, warstw pochodzenia i historii interpretacji: [`../docs/guides/SCHEMAT_DANYCH.md`](../docs/guides/SCHEMAT_DANYCH.md).
 - Instrukcja obróbki nowej dostawy scena po scenie: [`../docs/guides/PRZEPLYW_SCENY.md`](../docs/guides/PRZEPLYW_SCENY.md).
-- Przed pierwszą prawdziwą dostawą w katalogach leży bezspoilerowa zaślepka techniczna oznaczona motywem `zaslepka` (`grep -rl zaslepka content/ rozgrywka/`).
+- Zaślepka techniczna została usunięta przy pierwszej prawdziwej dostawie (LC_0_1, 2026-11-27); wszystkie karty opisują już prawdziwą opowieść.

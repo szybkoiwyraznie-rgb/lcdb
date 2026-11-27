@@ -24,7 +24,7 @@ test('tryb domyślny (powłoka) dociąga ciała kart i indeks tekstów na żąda
     assert.equal(powloka.tryb, 'powloka');
     assert.ok(fs.existsSync(path.join(powloka.dataDir, 'teksty.json')));
     assert.ok(fs.existsSync(path.join(powloka.dataDir, 'co-nowego.json')));
-    assert.ok(fs.existsSync(path.join(powloka.dataDir, 'przystanek-pod-zegarem.json')));
+    assert.ok(fs.existsSync(path.join(powloka.dataDir, 'kontrakt-w-ciemnym-lesie.json')));
 
     const htmlPowloki = fs.readFileSync(powloka.plik, 'utf8');
     const mB64 = htmlPowloki.match(/globalThis\.LCDB_B64="([^"]+)"/);
@@ -34,7 +34,7 @@ test('tryb domyślny (powłoka) dociąga ciała kart i indeks tekstów na żąda
     globalThis.LCDB_TRYB = 'powloka';
     globalThis.LCDB_B64 = mB64[1];
     const dane = await zainicjujDane();
-    assert.equal(dane.strony['przystanek-pod-zegarem'].sekcje, undefined, 'ciało sceny nie siedzi w powłoce');
+    assert.equal(dane.strony['kontrakt-w-ciemnym-lesie'].sekcje, undefined, 'ciało sceny nie siedzi w powłoce');
 
     const pobraneUrl = [];
     const stareFetch = globalThis.fetch;
@@ -46,13 +46,13 @@ test('tryb domyślny (powłoka) dociąga ciała kart i indeks tekstów na żąda
     };
 
     try {
-      const dop = parsujHash('#/scena/przystanek-pod-zegarem');
+      const dop = parsujHash('#/scena/kontrakt-w-ciemnym-lesie');
       await zapewnijDaneWidoku(dop);
-      assert.deepEqual(pobraneUrl, ['data/przystanek-pod-zegarem.json']);
+      assert.deepEqual(pobraneUrl, ['data/kontrakt-w-ciemnym-lesie.json']);
       const htmlSceny = wyrenderujWidok(dop);
-      assert.match(htmlSceny, /Pod deszczową wiatą/);
+      assert.match(htmlSceny, /Pośrodku czarnego lasu/);
 
-      await zapewnijDaneWidoku(parsujHash('#/szukaj?q=bilet'));
+      await zapewnijDaneWidoku(parsujHash('#/szukaj?q=gwiazda'));
       assert.ok(pobraneUrl.includes('data/teksty.json'));
     } finally {
       globalThis.fetch = stareFetch;

@@ -43,14 +43,6 @@ Materiały z czytanek *Limbus Company* posługują się kilkoma stałymi oznacze
 
 ---
 
-## Usunięcie zaślepki technicznej przy pierwszej prawdziwej dostawie
+## Zaślepka techniczna — usunięta
 
-W świeżo urządzonym repozytorium znajduje się bezspoilerowa zaślepka techniczna oznaczona motywem `zaslepka` (`rozgrywka/zapisy/zaslepka-001.md` oraz startowe karty w `content/`).
-
-Gdy właściciel przekaże **pierwszą prawdziwą porcję rozegranej historii *Limbus Company***, usuń wszystkie pliki zaślepki jedną kontrolą:
-
-```bash
-grep -rl zaslepka content/ rozgrywka/
-```
-
-Usuń wypisane pliki kart zaślepki i `rozgrywka/zapisy/zaslepka-001.md`, osadź pierwsze prawdziwe sceny, zaktualizuj `rozgrywka/postep.json` oraz zastąp wpis startowy w `content/co-nowego.md`.
+Bezspoilerowa zaślepka techniczna (startowy zapis i jedenaście kart z motywem zaślepki) została usunięta przy pierwszej prawdziwej dostawie: `2026-11-27-001-prolog-selva-oscura-etap-0-1.md` (LC_0_1). Wyszukiwanie motywu zaślepki (jej łacińskiego zapisu, bez polskich znaków) w `content/` i `rozgrywka/` ma nie zwracać żadnego pliku — dlatego ten akapit celowo go nie przytacza.

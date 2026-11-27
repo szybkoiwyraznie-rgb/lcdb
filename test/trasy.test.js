@@ -47,10 +47,10 @@ test('każda pozycja MENU oraz każdy kafel strony głównej prowadzi do żywego
 test('filtry list, wyszukiwarka oraz nieznana ścieżka 404 działają przewidywalnie', () => {
   zaladuj();
   const postacieHtml = wyrenderujWidok(parsujHash('#/postacie?rola=protagonista'));
-  assert.match(postacieHtml, /Wędrowiec z Zegarem/);
-  assert.doesNotMatch(postacieHtml, /Strażniczka Toru/);
+  assert.match(postacieHtml, />Dante</);
+  assert.doesNotMatch(postacieHtml, />Faust</);
 
-  const szukajHtml = wyrenderujWidok(parsujHash('#/szukaj?q=mosi%C4%99%C5%BCny'));
+  const szukajHtml = wyrenderujWidok(parsujHash('#/szukaj?q=gwiazd%C4%85'));
   assert.match(szukajHtml, /wynik/);
 
   const brak = parsujHash('#/nie-istnieje/wcale');

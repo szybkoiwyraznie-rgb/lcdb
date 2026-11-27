@@ -26,6 +26,14 @@ Ten plik zbiera wnioski z prowadzenia bliźniaczych kronik (`wwm`, `srw`) oraz s
 - **Pułapka:** Pliki gry dzielą rozdział na dziesiątki drobnych węzłów *przed walką* i *po walce* (`<!-- S001B -->`, `<!-- S001A -->`), czasem liczących po dwa zdania. Tworzenie osobnej strony sceny dla każdego węzła poszatkowałoby kronikę na nieczytelne okruchy.
 - **Zasada:** Jedna karta w `content/sceny/` obejmuje **jedno spójne wydarzenie** (wspólne miejsce, czas i ciąg rozmowy — często łącząc część przed starciem i po starciu w dwie podsekcje `###` wewnątrz `## Treść sceny`). Brama `MIN_ELEMENTOW_SCENY = 4` blokuje mikrosceny (ADR 0009).
 
+### 1.5a. Część „po walce” bywa osobnym wydarzeniem — wtedy dziel etap na sceny `a`/`b`
+- **Pułapka:** Mechaniczne łączenie całego etapu w jedną kartę (bo „to samo miejsce”) daje kolosa, w którym dwie różne konfrontacje mieszają się w jednej analizie. W LC_0_1 część przed walką kończy się kontraktem i rozkazem, a część po walce to klęska przybyszów i interwencja nowej postaci.
+- **Zasada:** Gdy po znaczniku `*— Po walce —*` zaczyna się nowe rozstrzygające wydarzenie, utwórz drugą scenę z numerem z literą (`0-1a`, `0-1b` — sortowanie `Intl.Collator` z `numeric: true` porządkuje je poprawnie). Krótkie węzły nadal łączymy (1.5).
+
+### 1.5b. Skrót karty encji na kafelku pochodzi z opracowania, nie z cytatu
+- **Pułapka:** Karta zaczynająca się od `{{dostawa` z wielowierszowym `:::zapis` dawała na liście sklejony, nieczytelny skrót z surowymi znacznikami (`:::zapis Pantera: …`), a test integralności zgłaszał „niewyrenderowany blok :::zapis”.
+- **Zasada:** `wytnijStreszczenieZBlokow` (w `tools/build.mjs`) bierze najpierw warstwy `{{opracowanie` z boksu `## Opis` i wycina bloki `:::zapis`. Cytat otwierający kartę może więc stać na początku — skrót i tak powstanie z akapitu opracowania.
+
 ### 1.6. Rewizja hipotezy wymaga `interpretacje:` z dosłownym `poprzednio`
 - **Pułapka:** Nadpisanie starego bloku `{{model pewnosc=…}}` nowym wnioskiem bez śladu kasuje pamięć o tym, jak opowieść zwodziła lub odsłaniała karty.
 - **Zasada:** Przed zmianą merytoryczną interpretacji skopiuj jej dotychczasowe brzmienie **słowo w słowo** do pola `interpretacje:` (`fragment: <tytuł sekcji ##>`, `poprzednio: |`). Silnik sam wyrenderuje pod tą sekcją zwijany blok *Poprzednia wersja* (ADR 0007).

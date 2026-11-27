@@ -20,16 +20,9 @@ Paczka na Dysku Google (np. zbiór wszystkich 36 czytanek albo pełny zrzut `LC_
 
 ---
 
-## 2. Pierwsza prawdziwa dostawa — usunięcie zaślepki technicznej
+## 2. Pierwsza prawdziwa dostawa — zaślepka usunięta
 
-Jeśli w repozytorium wciąż znajduje się startowa zaślepka techniczna (`rozgrywka/zapisy/zaslepka-001.md` i karty z tagiem `zaslepka`):
-
-1. Wypisz wszystkie pliki zaślepki:
-   ```bash
-   grep -rl zaslepka content/ rozgrywka/
-   ```
-2. Usuń `rozgrywka/zapisy/zaslepka-001.md` oraz wszystkie 11 startowych kart zaślepki z `content/*/`.
-3. Zastąp treść `content/co-nowego.md` pierwszym prawdziwym wpisem z podróży i ustaw `rozgrywka/postep.json` na ostatnią scenę pierwszej dostawy.
+Startowa zaślepka techniczna (`rozgrywka/zapisy/zaslepka-001.md` i 11 kart z tagiem `zaslepka`) została usunięta przy pierwszej prawdziwej dostawie (LC_0_1 — Prolog *Selva Oscura*, Etap 0-1, 2026-11-27). Kontrola `grep -rl zaslepka content/ rozgrywka/` ma zwracać pustą listę; testy zależne od treści wskazują teraz na prawdziwe karty (`kontrakt-w-ciemnym-lesie`, `dante`).
 
 ---
 
@@ -42,6 +35,7 @@ Jeśli w repozytorium wciąż znajduje się startowa zaślepka techniczna (`rozg
 ### Krok 2 — Wyznacz granice scen (wydarzenie, nie węzeł techniczny)
 - Przeczytaj zarchiwizowany fragment i podziel go na **wydarzenia fabularne** (wspólne miejsce, ciągły czas, jedna rozmowa lub konfrontacja — ADR 0009).
 - Drobne węzły przed walką i po walce rozgrywające się w tym samym miejscu łącz w jedną kartę `scena`, rozdzielając jej etapy czytelnymi podsekcjami `###` wewnątrz `## Treść sceny`.
+- Gdy część „po walce” jest pełnym, osobnym wydarzeniem (nowa konfrontacja, nowa postać, inny rozstrzygający moment), dziel etap na dwie sceny o numerach z literą (`0-1a`, `0-1b`) — tak jak Etap 0-1: kontrakt i pierwszy rozkaz, potem klęska i interwencja nieznajomego.
 - Nadaj każdej nowej scenie kolejny, ciągły `kolejnosc` (`N + 1`, `N + 2`, …).
 
 ### Krok 3 — Utwórz karty scen, epizodu i rozdziału

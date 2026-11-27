@@ -22,7 +22,7 @@ test('slugify sprowadza polskie znaki do ASCII i pilnuje wzorca SLUG_RE', () => 
   assert.equal(slugify('Złota Gałąź'), 'zlota-galaz');
   assert.equal(slugify('  Dzielnica 4 — Zaułki!  '), 'dzielnica-4-zaulki');
   assert.equal(slugify('Pieśń I: Wyrzutek'), 'piesn-i-wyrzutek');
-  for (const t of ['Złota Gałąź', 'Wędrowiec z Zegarem', 'Mglisty Kwartał']) {
+  for (const t of ['Złota Gałąź', 'Mężczyzna o Czerwonych Oczach', 'Dystrykt 4']) {
     assert.match(slugify(t), SLUG_RE);
   }
 });
@@ -32,8 +32,8 @@ test('parseWikilinks oraz hrefDlaSlug obsługują wszystkie 10 typów stron lcdb
     parseWikilinks('Tekst [[dante]] i [[mefistofeles|autobus]]').map(({ slug, etykieta }) => ({ slug, etykieta })),
     [{ slug: 'dante', etykieta: null }, { slug: 'mefistofeles', etykieta: 'autobus' }],
   );
-  assert.equal(hrefDlaSlug('zarzad-nocnej-kolei', 'frakcja'), '#/frakcja/zarzad-nocnej-kolei');
-  assert.equal(hrefDlaSlug('mglisty-kwartal', 'dzielnica'), '#/dzielnica/mglisty-kwartal');
+  assert.equal(hrefDlaSlug('zwierzeta-mistrzyni', 'frakcja'), '#/frakcja/zwierzeta-mistrzyni');
+  assert.equal(hrefDlaSlug('dystrykt-4', 'dzielnica'), '#/dzielnica/dystrykt-4');
   assert.equal(hrefListy('frakcja'), '#/frakcje');
   assert.equal(hrefListy('dzielnica'), '#/dzielnice');
 });
