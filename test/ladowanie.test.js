@@ -35,6 +35,13 @@ test('tryb domyślny (powłoka) dociąga ciała kart i indeks tekstów na żąda
     globalThis.LCDB_B64 = mB64[1];
     const dane = await zainicjujDane();
     assert.equal(dane.strony['kontrakt-w-ciemnym-lesie'].sekcje, undefined, 'ciało sceny nie siedzi w powłoce');
+    // Każda strona indeksu ma swój plik ciała w data/, a żadne ciało ani tekst nie siedzi w powłoce.
+    for (const [slug, s] of Object.entries(dane.strony)) {
+      assert.ok(fs.existsSync(path.join(powloka.dataDir, `${slug}.json`)), `brak data/${slug}.json`);
+      assert.equal(s.sekcje, undefined, `${slug}: sekcje w powłoce`);
+      assert.equal(s.boksy, undefined, `${slug}: boksy w powłoce`);
+      assert.equal(s.tekst, undefined, `${slug}: tekst wyszukiwarki w powłoce`);
+    }
 
     const pobraneUrl = [];
     const stareFetch = globalThis.fetch;

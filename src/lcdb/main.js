@@ -158,7 +158,11 @@ async function uruchomPrzegladarke() {
     } catch (err) {
       if (biezacy !== numerNawigacji) return;
       if (glownyEl) {
-        glownyEl.innerHTML = `<div class="stan-pusty"><p>Nie udało się wczytać tej karty.</p><p class="meta">${escapeHtml(err?.message ?? String(err))}</p></div>`;
+        const zDysku = globalThis.location?.protocol === 'file:';
+        const podpowiedz = zDysku
+          ? 'Ta wersja kroniki dociąga karty osobno i wymaga serwera HTTP. Do czytania z dysku służy wersja jednoplikowa.'
+          : 'Karty dociągają się osobno z katalogu data/ obok strony — sprawdź, czy został skopiowany razem z nią.';
+        glownyEl.innerHTML = `<div class="stan-pusty"><p>Nie udało się wczytać tej karty.</p><p>${escapeHtml(podpowiedz)}</p><p class="meta">${escapeHtml(err?.message ?? String(err))}</p></div>`;
       }
     }
   }
