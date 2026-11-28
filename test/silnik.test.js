@@ -12,7 +12,7 @@ import {
 } from '../src/lcdb/markdown.js';
 import {
   policzElementySceny, walidujStrone, sprawdzGraniceFabuly, sprawdzWiernoscSceny, zbudujRejestr,
-  niepokryteWierszeZapisu, czyArchiwumWskazowek,
+  niepokryteWierszeZapisu, czyArchiwumWskazowek, czyArchiwumAkt, rodzajArchiwum, sprawdzWiernoscCytatow,
 } from '../src/lcdb/registry.js';
 import { historiaInterpretacjiHtml } from '../src/lcdb/render.js';
 import { generatorIdBoksow, spisBoksowHtml } from '../src/lcdb/spis-boksow.js';
@@ -251,4 +251,37 @@ test('archiwum wskazówek (ADR 0016) rozpoznaje się po nazwie i nie może być 
     'Zdanie.',
   );
   assert.ok(p.some((x) => /archiwum wskazówek/.test(x)));
+});
+
+test('archiwum akt (ADR 0017) rozpoznaje się po nazwie, nie może być podstawą sceny i musi być w całości zacytowane na kartach', () => {
+  assert.equal(czyArchiwumAkt('rozgrywka/zapisy/2026-11-27-004-grzesznicy-introdukcje-akta.md'), true);
+  assert.equal(czyArchiwumAkt('rozgrywka/zapisy/2026-11-27-003-prolog-etap-0-2.md'), false);
+  assert.equal(rodzajArchiwum('rozgrywka/zapisy/x-akta.md'), 'akta');
+  assert.equal(rodzajArchiwum('rozgrywka/zapisy/x-wskazowki.md'), 'wskazowki');
+  assert.equal(rodzajArchiwum('rozgrywka/zapisy/x-etap-0-2.md'), 'fabula');
+
+  const scena = sprawdzWiernoscSceny(
+    { typ: 'scena', slug: 'scena-x', zapis: 'rozgrywka/zapisy/2026-11-27-004-x-akta.md', body: ':::zapis\nZdanie.\n:::' },
+    'Zdanie.',
+  );
+  assert.ok(scena.some((x) => /archiwum akt/.test(x)));
+
+  // Pokrycie akt: nagłówki pomijane, każdy wiersz cytatu musi trafić na którąś kartę.
+  const akta = '### Grzesznik #1 — X\n\n> Pierwszy wiersz akt,\n> drugi wiersz akt.';
+  assert.deepEqual(niepokryteWierszeZapisu(akta, ['> Pierwszy wiersz akt,\n> drugi wiersz akt.']), []);
+  assert.deepEqual(niepokryteWierszeZapisu(akta, ['> Pierwszy wiersz akt,']), ['> drugi wiersz akt.']);
+});
+
+test('cytaty :::zapis na kartach encji muszą być dosłownym fragmentem któregoś archiwum (ADR 0017)', () => {
+  const archiwa = ['> Grzesznica, która opracowała silnik.\n> Twierdzi, że nikt jej nie dorównuje.', '**Faust:** Dante.'];
+  const karta = (body) => ({ typ: 'postac', slug: 'karta-x', body });
+  assert.deepEqual(sprawdzWiernoscCytatow(karta(':::zapis\n> Grzesznica, która opracowała silnik.\n:::'), archiwa), []);
+  // Różnice w białych znakach nie są przeredagowaniem.
+  assert.deepEqual(sprawdzWiernoscCytatow(karta(':::zapis\n> Grzesznica,   która opracowała\n silnik.\n:::'), archiwa), []);
+  const zle = sprawdzWiernoscCytatow(karta(':::zapis\n> Grzesznica, która zbudowała silnik.\n:::'), archiwa);
+  assert.equal(zle.length, 1);
+  assert.match(zle[0], /karta-x: cytat :::zapis 1 nie jest dosłownym fragmentem/);
+  // Karta bez cytatów i sceny (sprawdzane osobno, ADR 0009) nie podlegają tej bramie.
+  assert.deepEqual(sprawdzWiernoscCytatow(karta('Zwykły akapit.'), archiwa), []);
+  assert.deepEqual(sprawdzWiernoscCytatow({ typ: 'scena', slug: 's', body: ':::zapis\nCoś innego.\n:::' }, archiwa), []);
 });

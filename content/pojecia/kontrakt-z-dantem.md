@@ -3,9 +3,9 @@ typ: pojecie
 slug: kontrakt-z-dantem
 tytul: Kontrakt z Dantem
 rodzaj: zjawisko
-postacie: [dante, faust, rodion, mezczyzna-o-czerwonych-oczach]
+postacie: [dante, faust, rodion, vergilius]
 miejsca: [ciemny-las]
-watki: [kim-sa-przybysze-z-autobusu, utracona-pamiec-dantego, gdzie-jest-gwiazda, kim-jest-mezczyzna-o-czerwonych-oczach]
+watki: [kim-sa-przybysze-z-autobusu, utracona-pamiec-dantego, gdzie-jest-gwiazda, kim-jest-vergilius]
 konteksty: [boska-komedia, faust-goethego]
 tagi: [kontrakt, gwiazda, czas, grzesznicy]
 utworzono: 2026-11-27
@@ -32,7 +32,7 @@ A potem wrażenie, że przeszywa mnie naraz wiele łańcuchów. Albo że to ja j
 }}
 
 {{opracowanie
-Więź zawarta w [[ciemny-las|ciemnym lesie]] między [[dante|Dantem]] a przybyszami z [[autobus|autobusu]]. Do jej zawarcia wystarcza, by Dante przywołał obraz gwiazdy i powtórzył za [[faust|Faust]] „Idź za swoją gwiazdą”. Fizycznie odczuwa to jako szczęknięcie i osunięcie się czegoś w głowie, a potem jako łańcuchy, które go przeszywają — albo na które to on zostaje nawleczony. Faust zapewnia go, że serce „naprawdę nadal” mu działa, i ogłasza, że kontrakt „został dopełniony”.
+Więź zawarta w [[ciemny-las|ciemnym lesie]] między [[dante|Dantem]] a przybyszami z [[mephistopheles|autobusu]]. Do jej zawarcia wystarcza, by Dante przywołał obraz gwiazdy i powtórzył za [[faust|Faust]] „Idź za swoją gwiazdą”. Fizycznie odczuwa to jako szczęknięcie i osunięcie się czegoś w głowie, a potem jako łańcuchy, które go przeszywają — albo na które to on zostaje nawleczony. Faust zapewnia go, że serce „naprawdę nadal” mu działa, i ogłasza, że kontrakt „został dopełniony”.
 }}
 
 {{opracowanie
@@ -53,4 +53,18 @@ W objaśnieniach towarzyszących pierwszemu starciu rozkaz dla Grzeszników wyda
 
 {{model pewnosc=40 pytanie="Czy łańcuch rozkazu to ten sam łańcuch, który Dante poczuł przy zawarciu kontraktu?"
 Obrazy się zbiegają. Przy kontrakcie Dante czuje, jakby przeszywało go „naraz wiele łańcuchów” — albo jakby to on był na nie nawlekany. Ma też zegar zamiast głowy, czyli mechanizm z zębatek. A rozkaz w walce to łańcuch przeciągnięty między zębatkami przez wszystkich Grzeszników. Można to czytać jako jedną więź widzianą z dwóch stron: od środka, jako ból Dantego, i od zewnątrz, jako sposób wydawania rozkazów. Opowieść nie łączy jednak tych obrazów wprost — stąd niska pewność.
+}}
+
+## Cofnięty zegar
+
+{{dostawa
+:::zapis
+**Faust:** A pan, by przywracać nam życie, będzie musiał cierpieć na próżno.
+**Dante:** Ból… Przywracać życie? Czyli to wcześniej…
+**Faust:** Tak. Ożywamy, ponieważ pan “cofnął zegar”.
+:::
+}}
+
+{{opracowanie
+W autobusie [[faust|Faust]] potwierdza wprost to, co w lesie było tylko widać: polegli Grzesznicy wracają do życia, bo Dante „cofa zegar”, a płaci za to bólem. Faust mówi o tym jak o koszcie, który trzeba ograniczać — jeśli walki będą wyglądać jak pierwsza, Dante będzie musiał „cierpieć na próżno”. [[vergilius|Vergilius]] przerywa jej, zanim powie więcej ([[zakres-obowiazkow|Zakres obowiązków]]).
 }}

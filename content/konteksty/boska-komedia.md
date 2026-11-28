@@ -38,5 +38,5 @@ W pieśni XV wędrowiec spotyka swojego dawnego nauczyciela, Brunetta Latiniego,
 }}
 
 {{opracowanie
-Właśnie tymi obrazami posługuje się [[faust|Faust]]. Pierwsze, co mówi do Dantego, to „nie chybi pan portu chwały”, a hasłem [[kontrakt-z-dantem|kontraktu]] staje się „Idź za swoją gwiazdą”. W poemacie to rada nauczyciela dla ucznia; w lesie te same słowa zawiązują więź między Dantem a przybyszami z [[autobus|autobusu]]. Zestawia się z nimi także pytanie [[pantera|Pantery]], „gdzie jest twoja gwiazda” ([[gdzie-jest-gwiazda|Gdzie jest gwiazda?]]).
+Właśnie tymi obrazami posługuje się [[faust|Faust]]. Pierwsze, co mówi do Dantego, to „nie chybi pan portu chwały”, a hasłem [[kontrakt-z-dantem|kontraktu]] staje się „Idź za swoją gwiazdą”. W poemacie to rada nauczyciela dla ucznia; w lesie te same słowa zawiązują więź między Dantem a przybyszami z [[mephistopheles|autobusu]]. Zestawia się z nimi także pytanie [[pantera|Pantery]], „gdzie jest twoja gwiazda” ([[gdzie-jest-gwiazda|Gdzie jest gwiazda?]]).
 }}

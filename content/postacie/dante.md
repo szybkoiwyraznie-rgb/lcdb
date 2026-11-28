@@ -3,22 +3,23 @@ typ: postac
 slug: dante
 tytul: Dante
 rola: protagonista
-pseudonim: [Ja, Pan Zegarowy Dowódca]
-przydzial: Wydaje rozkazy przybyszom z autobusu
+pseudonim: [Ja, Pan Zegarowy Dowódca, Kierownik]
+przydzial: Kierownik dwanaściorga Grzeszników
 pierwsze_wystapienie: kontrakt-w-ciemnym-lesie
 dzielnica: dystrykt-4
-miejsca: [ciemny-las, autobus]
-watki: [utracona-pamiec-dantego, gdzie-jest-gwiazda, kim-sa-przybysze-z-autobusu, kim-jest-mezczyzna-o-czerwonych-oczach]
+miejsca: [ciemny-las, mephistopheles]
+watki: [utracona-pamiec-dantego, gdzie-jest-gwiazda, kim-sa-przybysze-z-autobusu, kim-jest-vergilius, skarb-u-kresu-piekla]
 konteksty: [boska-komedia]
-pojecia: [zegarowa-glowa, kontrakt-z-dantem]
+pojecia: [zegarowa-glowa, kontrakt-z-dantem, aspekt, fikserzy]
 tagi: [pamiec, gwiazda, kontrakt]
+frakcje: [limbus-company]
 utworzono: 2026-11-27
 ---
 
 ## Opis
 
 {{opracowanie
-Mężczyzna z [[zegarowa-glowa|zegarem w miejscu głowy]], przez który opowieść mówi w pierwszej osobie. W chwili napaści w [[ciemny-las|ciemnym lesie]] zapis oznacza go jako „Ja”. Imię **Dante** nadaje mu dopiero [[faust|Faust]] po zawarciu [[kontrakt-z-dantem|kontraktu]] — on sam go nie podaje i początkowo nie reaguje na nie inaczej niż zdumieniem. [[outis|Outis]] nazywa go niepewnie „Panem Zegarowym Dowódcą”, a według plotki powtarzanej przez [[gregor|Gregora]] ma być „przyszłym szefem” przybyszów z [[autobus|autobusu]].
+Mężczyzna z [[zegarowa-glowa|zegarem w miejscu głowy]], przez który opowieść mówi w pierwszej osobie. W chwili napaści w [[ciemny-las|ciemnym lesie]] zapis oznacza go jako „Ja”. Imię **Dante** nadaje mu dopiero [[faust|Faust]] po zawarciu [[kontrakt-z-dantem|kontraktu]] — on sam go nie podaje i początkowo nie reaguje na nie inaczej niż zdumieniem. [[outis|Outis]] nazywa go niepewnie „Panem Zegarowym Dowódcą”, a według plotki powtarzanej przez [[gregor|Gregora]] ma być „przyszłym szefem” przybyszów z [[mephistopheles|autobusu]].
 }}
 
 ## Głowa bez ust
@@ -57,9 +58,18 @@ Właśnie w ten sposób walka toczy się pod dyktando rozkazów Kierownika.
 }}
 
 {{opracowanie
-W dialogu nikt nie nadaje Dantemu tytułu. [[faust|Faust]] mówi do niego „pan”, a [[outis|Outis]] dopiero szuka właściwego słowa („Zega… ekhm”, „Panie Zegarowy Dowódco…?”). Objaśnienia towarzyszące pierwszemu starciu nazywają go wprost Kierownikiem, a tych, którym wydaje rozkazy — Grzesznikami. Tak też układa się zależność zawarta w [[kontrakt-z-dantem|kontrakcie]]: siedmioro z [[autobus|autobusu]] walczy za Dantego, „o ile wyda im pan właściwe rozkazy”.
+W dialogu nikt nie nadaje Dantemu tytułu. [[faust|Faust]] mówi do niego „pan”, a [[outis|Outis]] dopiero szuka właściwego słowa („Zega… ekhm”, „Panie Zegarowy Dowódco…?”). Objaśnienia towarzyszące pierwszemu starciu nazywają go wprost Kierownikiem, a tych, którym wydaje rozkazy — Grzesznikami. Tak też układa się zależność zawarta w [[kontrakt-z-dantem|kontrakcie]]: siedmioro z [[mephistopheles|autobusu]] walczy za Dantego, „o ile wyda im pan właściwe rozkazy”.
 }}
 
+## W autobusie
+
+{{opracowanie
+W autobusie Dante zostaje Kierownikiem już w rozmowie: tak nazywają go [[gregor|Gregor]] i [[vergilius|Vergilius]] („Kierowniku Dante”). Jego słowa słyszą tylko Grzesznicy — [[faust|Faust]] wyjaśnia, że może mówić do jednej osoby albo do wszystkich naraz, ale Vergilius słyszy tylko tykanie. Z nim Dante porozumiewa się gestami albo przez Faust ([[dwunastu-grzesznikow|Dwunastu Grzeszników]]).
+}}
+
+{{opracowanie
+Wiele w nim jeszcze z przypadkowego przybysza: odpowiada niepewnie, pyta, czemu niby ma iść do piekła, i o mało nie kłania się pierwszy [[outis|Outis]]. Zgadza się na wyprawę dopiero wtedy, gdy Faust obiecuje mu „wyryć [[aspekt|Aspekt]]”. Na koniec potwierdza się, że ból, który czuł w lesie, był ceną za życie Grzeszników: ożywają, bo on „cofnął zegar” ([[zakres-obowiazkow|Zakres obowiązków]]).
+}}
 
 ## Imię
 

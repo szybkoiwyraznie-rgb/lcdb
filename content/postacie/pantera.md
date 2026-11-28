@@ -7,7 +7,7 @@ pierwsze_wystapienie: kontrakt-w-ciemnym-lesie
 frakcja: zwierzeta-mistrzyni
 dzielnica: dystrykt-4
 miejsca: [ciemny-las]
-watki: [gdzie-jest-gwiazda, kto-poslal-zwierzeta, kim-jest-mezczyzna-o-czerwonych-oczach]
+watki: [gdzie-jest-gwiazda, kto-poslal-zwierzeta, kim-jest-vergilius]
 konteksty: [boska-komedia]
 tagi: [las, gwiazda]
 utworzono: 2026-11-27
@@ -20,13 +20,13 @@ Najchłodniejszy z trójki [[zwierzeta-mistrzyni|zabójców]] w [[ciemny-las|cie
 }}
 
 {{opracowanie
-Na dźwięk [[autobus|autobusu]] zapewnia, że nikt nie mógł go śledzić, i od razu szacuje „prawdopodobieństwo”, że to zwierzę. Myśli jak ktoś, kto planuje, a nie działa w gniewie.
+Na dźwięk [[mephistopheles|autobusu]] zapewnia, że nikt nie mógł go śledzić, i od razu szacuje „prawdopodobieństwo”, że to zwierzę. Myśli jak ktoś, kto planuje, a nie działa w gniewie.
 }}
 
 ## Wobec Szkarłatnego Spojrzenia
 
 {{opracowanie
-Po walce Pantera zostaje jedynym nietkniętym z trójki. Nie rozumie, jak przybysze mogli pokonać Lwa, a ich ostatnią obronę nazywa „zbiorowym samobójstwem”. Gdy zjawia się [[mezczyzna-o-czerwonych-oczach|mężczyzna o czerwonych oczach]], Pantera rozpoznaje go — „…Szkarłatne Spojrzenie” — i na groźbę odpowiada już tylko milczeniem. Nieznajomy każe mu zabrać okaleczonych towarzyszy i uciekać ([[czas-ktory-da-sie-cofnac|Czas, który da się cofnąć]]).
+Po walce Pantera zostaje jedynym nietkniętym z trójki. Nie rozumie, jak przybysze mogli pokonać Lwa, a ich ostatnią obronę nazywa „zbiorowym samobójstwem”. Gdy zjawia się [[vergilius|mężczyzna o czerwonych oczach]], Pantera rozpoznaje go — „…Szkarłatne Spojrzenie” — i na groźbę odpowiada już tylko milczeniem. Nieznajomy każe mu zabrać okaleczonych towarzyszy i uciekać ([[czas-ktory-da-sie-cofnac|Czas, który da się cofnąć]]).
 }}
 
 ## Imię

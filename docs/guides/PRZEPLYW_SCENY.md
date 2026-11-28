@@ -13,6 +13,7 @@ Nowy materiał od właściciela może przyjść w jednej lub kilku postaciach:
 3. **Karty Grzeszników, Tożsamości ze Światów Lustrzanych (*Identities*) oraz *E.G.O*** — zawierają akta więźnia, opowieści Tożsamości i wypowiedzi postaci obok tabelek bojowych.
 4. **Zrzuty ekranu, własne notatki właściciela lub pytania interpretacyjne.**
 5. **Wskazówki towarzyszące walce** — objaśnienia sterowania z etapów (osobny plik, np. `LC_0_1_wskazowki.txt`, albo blok po znaczniku `*— Wskazówki —*`). Archiwizujemy je osobno jako `…-wskazowki.md` i bierzemy z nich wyłącznie nazwy, tytuły i obrazy świata — nigdy mechanikę (ADR 0016).
+6. **Akta Grzeszników** — dokumenty świata, w których firma przedstawia Kierownikowi Grzeszników (np. blok „Akta Grzeszników (introdukcje)” w LC_0_2). Archiwizujemy je osobno jako `…-akta.md`; nie są sceną, ale każdy ich wiersz trafia dosłownie na kartę encji (ADR 0017).
 
 ### Żelazna reguła pracy z paczkami na Dysku Google
 Paczka na Dysku Google (np. zbiór wszystkich 36 czytanek albo pełny zrzut `LC_DANE_*.zip`) niemal zawsze zawiera pliki wybiegające daleko poza miejsce, do którego właściciel dotarł w grze!
@@ -32,6 +33,7 @@ Startowa zaślepka techniczna (`rozgrywka/zapisy/zaslepka-001.md` i 11 kart z ta
 ### Krok 1 — Zarchiwizuj surowy zapis w `rozgrywka/zapisy/`
 - Zapisz rozegrany tekst w `rozgrywka/zapisy/RRRR-MM-DD-<nr>-<slug>.md` dokładnie w brzmieniu źródłowym (nie poprawiaj literówek oryginału, nie usuwaj `<!-- S001B -->` ani `\<…>`).
 - Wskazówki towarzyszące walce zapisz dosłownie w osobnym pliku `rozgrywka/zapisy/RRRR-MM-DD-<nr>-<slug>-wskazowki.md`. Żadna scena nie wskazuje go w `zapis:` (build to zatrzyma), a `npm run zapis` nie wymaga jego pokrycia. Nazwy i obrazy świata, które z nich wynikają, wpisz do kart jako `{{opracowanie}}` z jawnym źródłem („w objaśnieniach towarzyszących pierwszemu starciu…”), a zbieżności obrazów jako `{{model pewnosc=…}}` (ADR 0016).
+- Akta Grzeszników zapisz dosłownie w osobnym pliku `rozgrywka/zapisy/RRRR-MM-DD-<nr>-<slug>-akta.md`. Żadna scena nie wskazuje go w `zapis:`. Każdy wiersz akt (poza nagłówkami) zacytuj dosłownie w `:::zapis` na karcie encji — zwykle w sekcji `## Akta Grzesznika` danej postaci, z `{{opracowanie}}` streszczającym akta jako zdanie firmy. `npm run zapis` wypisze każdy niezacytowany wiersz, a build zatrzyma każdy cytat na karcie, który nie jest dosłownym fragmentem archiwum (ADR 0017).
 - Jeżeli dostawa jest po angielsku lub koreańsku, w `rozgrywka/zapisy/` i w blokach `:::zapis` trzymaj **dosłowny oryginał dostawy**, natomiast tytuł karty, `streszczenie`, podsekcje `###`, `## Analiza` i karty encji pisz po polsku (cytując kluczowe zwroty i podając `tytul_en` / `tytul_kr`). Jeżeli właściciel dostarczył polską czytankę — cały `:::zapis` jest w tym przekładzie.
 
 ### Krok 2 — Wyznacz granice scen (wydarzenie, nie węzeł techniczny)

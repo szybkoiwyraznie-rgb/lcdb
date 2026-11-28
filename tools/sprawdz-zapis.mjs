@@ -9,7 +9,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { wczytajStrony, wczytajZapisy } from './content-loader.mjs';
 import {
-  sprawdzWiernoscSceny, wytnijBlokiZapisu, niepokryteWierszeZapisu, czyArchiwumWskazowek,
+  sprawdzWiernoscSceny, sprawdzWiernoscCytatow, wytnijBlokiZapisu, niepokryteWierszeZapisu, rodzajArchiwum,
 } from '../src/lcdb/registry.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -21,7 +21,9 @@ if (zapisy.size === 0) {
   process.exit(0);
 }
 
-const strony = wczytajStrony({ root: ROOT }).filter((s) => s.typ === 'scena');
+const wszystkie = wczytajStrony({ root: ROOT });
+const strony = wszystkie.filter((s) => s.typ === 'scena');
+const karty = wszystkie.filter((s) => s.typ !== 'scena' && !s.problem);
 const wybrane = filtr ? strony.filter((s) => s.slug === filtr) : strony;
 let problemow = 0;
 
@@ -37,6 +39,22 @@ for (const s of wybrane) {
   }
 }
 
+// Cytaty :::zapis na kartach encji muszą być dosłowne względem któregoś archiwum (ADR 0017).
+if (!filtr) {
+  let cytatow = 0;
+  for (const k of karty) {
+    const p = sprawdzWiernoscCytatow(k, zapisy.values());
+    cytatow += wytnijBlokiZapisu(k.body).length;
+    if (p.length > 0) {
+      problemow += p.length;
+      for (const x of p) console.log(`✗ ${x}`);
+    }
+  }
+  console.log(`✓ karty encji — ${cytatow} cytat(ów) :::zapis sprawdzonych względem archiwów`);
+}
+
+const blokiKart = karty.flatMap((k) => wytnijBlokiZapisu(k.body));
+
 // Pokrycie archiwum liczone wierszami (czytanki LC mają ciągi kwestii bez pustych linii — ADR 0009).
 const blokiWgZapisu = new Map();
 for (const s of strony) {
@@ -47,8 +65,20 @@ for (const s of strony) {
 }
 
 for (const [sciezka, tekst] of zapisy) {
-  if (czyArchiwumWskazowek(sciezka)) {
+  const rodzaj = rodzajArchiwum(sciezka);
+  if (rodzaj === 'wskazowki') {
     console.log(`✓ ${sciezka} — archiwum wskazówek, poza pokryciem scen (ADR 0016)`);
+    continue;
+  }
+  if (rodzaj === 'akta') {
+    const brak = niepokryteWierszeZapisu(tekst, blokiKart);
+    if (brak.length > 0) {
+      problemow += brak.length;
+      console.log(`\n✗ ${sciezka}: ${brak.length} wiersz(y) akt bez dosłownego cytatu na żadnej karcie (ADR 0017):`);
+      for (const w of brak.slice(0, 10)) console.log(`  · ${w.slice(0, 110)}${w.length > 110 ? '…' : ''}`);
+    } else {
+      console.log(`✓ ${sciezka} — każdy wiersz akt jest zacytowany na którejś karcie (ADR 0017)`);
+    }
     continue;
   }
   const pominiete = niepokryteWierszeZapisu(tekst, blokiWgZapisu.get(sciezka) ?? []);

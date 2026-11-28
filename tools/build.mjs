@@ -17,7 +17,7 @@ import {
 } from './content-loader.mjs';
 import { collectModules, assertNoNameCollisions, stripModuleSyntax } from './module-graph.mjs';
 import {
-  zbudujRejestr, walidujStrone, sprawdzWiernoscSceny, sprawdzGraniceFabuly,
+  zbudujRejestr, walidujStrone, sprawdzWiernoscSceny, sprawdzWiernoscCytatow, sprawdzGraniceFabuly,
   sprawdzPorzadekEpizodow, resolverLinkow, policzBacklinki, policzTagi, policzStatystyki,
 } from '../src/lcdb/registry.js';
 import { parseWikilinks } from '../src/lcdb/links.js';
@@ -97,6 +97,10 @@ export function zbudujDane({ root = ROOT } = {}) {
     const sciezka = sc.zapis ? `rozgrywka/zapisy/${path.basename(sc.zapis)}` : null;
     const tekstZapisu = sciezka ? zapisy.get(sciezka) ?? null : null;
     problemy.push(...sprawdzWiernoscSceny(sc, tekstZapisu));
+  }
+  for (const s of suroweStrony) {
+    if (s.problem || s.typ === 'scena') continue;
+    problemy.push(...sprawdzWiernoscCytatow(s, zapisy.values()));
   }
 
   const stronyIndeks = {};

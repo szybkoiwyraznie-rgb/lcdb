@@ -42,6 +42,10 @@ Ten plik zbiera wnioski z prowadzenia bliźniaczych kronik (`wwm`, `srw`) oraz s
 ### 1.7. Wskazówki walki: nazwy tak, mechanika nie
 - **Pułapka:** Objaśnienia sterowania wyglądają na czystą mechanikę i łatwo je wyrzucić w całości — a to w nich po raz pierwszy padają nazwy „Grzesznicy” i „Kierownik”, których dialog Etapu 0-1 nie używa. Odwrotny błąd: wkleić je do treści sceny, razem z „panelem dowodzenia” i „umiejętnościami”.
 - **Zasada:** Archiwizuj je osobno (`…-wskazowki.md`), nie wiąż z żadną sceną, a do kart przenoś tylko nazwy, tytuły i obrazy — z jawnym źródłem w zdaniu i z pierwszeństwem fabuły, gdy ta powie coś innego (ADR 0016).
+
+### 1.8. Akta Grzeszników to nie scena i nie wskazówki
+- **Pułapka:** Akta przychodzą w tym samym pliku co fabuła etapu, więc kusi, żeby dokleić je do sceny (choć nikt ich w scenie nie czyta) albo potraktować jak wskazówki i zostawić poza kroniką. Drugi błąd: streścić je głosem kroniki, jakby oceny firmy były faktami.
+- **Zasada:** Archiwizuj je osobno (`…-akta.md`), cytuj każdy wiersz dosłownie na karcie postaci w `## Akta Grzesznika`, a w opracowaniu pisz „według akt…”. Numer z akt idzie do `numer_grzesznika`. Gdy akta wymuszają zmianę wcześniejszego wniosku (np. roli postaci), zapisz ją w `interpretacje:` (ADR 0017).
 ---
 
 ## 2. Pułapki techniczne silnika i środowiska

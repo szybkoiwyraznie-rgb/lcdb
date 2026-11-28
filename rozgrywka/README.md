@@ -31,6 +31,8 @@ np. `2026-11-26-001-prolog-las-mroku.md`, `2026-11-27-001-canto-1-wyrzutek.md`.
 
 Wskazówki towarzyszące walce (objaśnienia sterowania przekazane osobno lub po znaczniku `*— Wskazówki —*`) archiwizujemy dosłownie w osobnym pliku z końcówką `-wskazowki.md`, np. `2026-11-27-002-prolog-selva-oscura-etap-0-1-wskazowki.md`. Takie archiwum nie jest podstawą żadnej sceny i nie podlega kontroli pokrycia; służy jako źródło nazw i obrazów świata (ADR 0016).
 
+Akta Grzeszników i podobne dokumenty świata archiwizujemy dosłownie w osobnym pliku z końcówką `-akta.md`, np. `2026-11-27-004-grzesznicy-introdukcje-akta.md`. Takie archiwum nie jest podstawą żadnej sceny, ale każdy jego wiersz (poza nagłówkami) musi być dosłownie zacytowany w `:::zapis` na którejś karcie encji (ADR 0017).
+
 ---
 
 ## Konwencje zapisu dialogów *Limbus Company*

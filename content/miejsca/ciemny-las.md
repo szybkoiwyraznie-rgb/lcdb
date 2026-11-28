@@ -18,7 +18,7 @@ utworzono: 2026-11-27
 }}
 
 {{opracowanie
-Miejsce pierwszego etapu podróży, opisywane jako „czarny las”. [[zwierzeta-mistrzyni|Zabójcy]] wybrali je, bo „tu nikt nie przychodzi i nikt nas nie zobaczy” — tym większe jest ich zaskoczenie, gdy między drzewa wtacza się [[autobus]]. Zabłądzenie jest tu powracającym motywem: [[dante|Dante]] mówi o zgubionej drodze, [[lew|Lew]] drwi, że „za zboczenie z drogi płaci się drożej, niż się zdaje”, a [[faust|Faust]] wita Dantego słowami „Zgubił pan drogę w ciemnym lesie”.
+Miejsce pierwszego etapu podróży, opisywane jako „czarny las”. [[zwierzeta-mistrzyni|Zabójcy]] wybrali je, bo „tu nikt nie przychodzi i nikt nas nie zobaczy” — tym większe jest ich zaskoczenie, gdy między drzewa wtacza się [[mephistopheles|autobus]]. Zabłądzenie jest tu powracającym motywem: [[dante|Dante]] mówi o zgubionej drodze, [[lew|Lew]] drwi, że „za zboczenie z drogi płaci się drożej, niż się zdaje”, a [[faust|Faust]] wita Dantego słowami „Zgubił pan drogę w ciemnym lesie”.
 }}
 
 {{model

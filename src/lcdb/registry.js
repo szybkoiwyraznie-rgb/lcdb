@@ -502,10 +502,51 @@ export function czyArchiwumWskazowek(sciezka) {
   return WSKAZOWKI_RE.test(String(sciezka ?? ''));
 }
 
+/**
+ * Archiwum akt (ADR 0017): Akta Grzeszników i podobne teksty towarzyszące, przekazane w dostawie.
+ * Rozpoznawane po nazwie `…-akta.md`. Nie jest podstawą sceny; każdy jego wiersz musi trafić
+ * dosłownie do bloku `:::zapis` na którejś karcie encji (pokrycie liczy `npm run zapis`).
+ */
+export const AKTA_RE = /-akta\.md$/;
+
+export function czyArchiwumAkt(sciezka) {
+  return AKTA_RE.test(String(sciezka ?? ''));
+}
+
+/** Rodzaj archiwum w `rozgrywka/zapisy/`: `fabula` (sceny), `akta` (karty encji) albo `wskazowki` (ADR 0016). */
+export function rodzajArchiwum(sciezka) {
+  if (czyArchiwumWskazowek(sciezka)) return 'wskazowki';
+  if (czyArchiwumAkt(sciezka)) return 'akta';
+  return 'fabula';
+}
+
+/**
+ * Dosłowność cytatów na kartach encji (ADR 0017): każdy blok `:::zapis` na karcie innej niż scena
+ * musi być dosłownym fragmentem któregoś archiwum z `rozgrywka/zapisy/`.
+ */
+export function sprawdzWiernoscCytatow(strona, teksty = []) {
+  if (!strona || strona.typ === 'scena') return [];
+  const bloki = wytnijBlokiZapisu(strona.body);
+  if (bloki.length === 0) return [];
+  const archiwa = [...teksty].map(normalizujTekst);
+  const problemy = [];
+  for (const [indeks, blok] of bloki.entries()) {
+    const tresc = normalizujTekst(blok);
+    if (tresc === '') continue;
+    if (!archiwa.some((a) => a.includes(tresc))) {
+      problemy.push(`${strona.slug}: cytat :::zapis ${indeks + 1} nie jest dosłownym fragmentem żadnego archiwum w rozgrywka/zapisy/ (ADR 0017)`);
+    }
+  }
+  return problemy;
+}
+
 /** Wierność zapisu sceny (ADR 0009): każdy blok `:::zapis` musi być dosłownym fragmentem archiwum rozgrywki. */
 export function sprawdzWiernoscSceny(strona, tekstZapisu) {
   if (strona.typ !== 'scena') return [];
   const gdzie = strona.slug;
+  if (czyArchiwumAkt(strona.zapis)) {
+    return [`${gdzie}: scena nie może opierać się na archiwum akt "${strona.zapis}" — akta trafiają na karty encji (ADR 0017)`];
+  }
   if (czyArchiwumWskazowek(strona.zapis)) {
     return [`${gdzie}: scena nie może opierać się na archiwum wskazówek "${strona.zapis}" — treść sceny pochodzi wyłącznie z zapisu fabuły (ADR 0016)`];
   }

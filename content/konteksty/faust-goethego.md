@@ -22,5 +22,5 @@ Dwuczęściowy dramat Johanna Wolfganga Goethego (część pierwsza 1808, druga 
 ## Faust w ciemnym lesie
 
 {{opracowanie
-W lesie imię [[faust|Faust]] nosi kobieta, która sama prowadzi zawarcie [[kontrakt-z-dantem|kontraktu]] i ogłasza, że „kontrakt został dopełniony”. Role są tu odwrócone. To nie Faust zyskuje sługę: ona i pozostali przybysze z [[autobus|autobusu]] oddają się pod władzę cudzego czasu („od tej chwili należymy do pańskiego czasu”).
+W lesie imię [[faust|Faust]] nosi kobieta, która sama prowadzi zawarcie [[kontrakt-z-dantem|kontraktu]] i ogłasza, że „kontrakt został dopełniony”. Role są tu odwrócone. To nie Faust zyskuje sługę: ona i pozostali przybysze z [[mephistopheles|autobusu]] oddają się pod władzę cudzego czasu („od tej chwili należymy do pańskiego czasu”).
 }}

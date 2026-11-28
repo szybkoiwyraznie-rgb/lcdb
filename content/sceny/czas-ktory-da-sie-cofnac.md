@@ -7,11 +7,11 @@ numer_sceny: "0-1b"
 kolejnosc: 2
 streszczenie: "Przybysze z autobusu przegrywają walkę i padają jeden po drugim, a Dante — bez wspomnień i bez planu — czeka na śmierć. Ratuje go nieznajomy o czerwonych oczach, który okalecza Lwa i Wilka, każe Panterze zabrać rannych i odejść, a Dantemu zapowiada Dantemu „czas, który da się cofnąć”. Okupione to zostaje bólem, pod którym ciała poległych odzyskują dawny kształt."
 zapis: rozgrywka/zapisy/2026-11-27-001-prolog-selva-oscura-etap-0-1.md
-postacie: [dante, faust, ishmael, yi-sang, rodion, gregor, pantera, lew, wilk, mezczyzna-o-czerwonych-oczach]
+postacie: [dante, faust, ishmael, yi-sang, rodion, gregor, pantera, lew, wilk, vergilius]
 dzielnice: [dystrykt-4]
 miejsca: [ciemny-las]
 frakcje: [zwierzeta-mistrzyni]
-watki: [utracona-pamiec-dantego, gdzie-jest-gwiazda, kim-sa-przybysze-z-autobusu, kto-poslal-zwierzeta, kim-jest-mezczyzna-o-czerwonych-oczach]
+watki: [utracona-pamiec-dantego, gdzie-jest-gwiazda, kim-sa-przybysze-z-autobusu, kto-poslal-zwierzeta, kim-jest-vergilius]
 konteksty: [boska-komedia]
 pojecia: [kontrakt-z-dantem, zegarowa-glowa]
 sekcje_analizy:
@@ -116,7 +116,7 @@ Dante po raz pierwszy wprost łączy utratę pamięci z kontraktem: „Odkąd po
 
 ### Szkarłatne Spojrzenie
 
-Odpowiedzią jest głos spoza kadru: „Przekaż Wężowi, fałszywa lwico”, a zaraz po nim pojawia się [[mezczyzna-o-czerwonych-oczach|mężczyzna o czerwonych oczach]] („Tego nurtu nie da się zatrzymać”). Lew krzyczy z bólu, a [[wilk|Wilk]] rozpoznaje „czerwień” i pyta, dlaczego. Przybysz wyjaśnia Panterze, że odciął towarzyszom „tylko rękę i nogę”, żeby on, „cały i zdrowy”, mógł ich pozbierać i uciekać. Rany mają posłużyć za „ordery”: dzięki nim „góra uzna”, że trójka zrobiła, co do niej należało. Alternatywą jest „wyzionąć ducha tutaj”. Pantera zna go z przydomka — „Szkarłatne Spojrzenie” — i odpowiada już tylko milczeniem.
+Odpowiedzią jest głos spoza kadru: „Przekaż Wężowi, fałszywa lwico”, a zaraz po nim pojawia się [[vergilius|mężczyzna o czerwonych oczach]] („Tego nurtu nie da się zatrzymać”). Lew krzyczy z bólu, a [[wilk|Wilk]] rozpoznaje „czerwień” i pyta, dlaczego. Przybysz wyjaśnia Panterze, że odciął towarzyszom „tylko rękę i nogę”, żeby on, „cały i zdrowy”, mógł ich pozbierać i uciekać. Rany mają posłużyć za „ordery”: dzięki nim „góra uzna”, że trójka zrobiła, co do niej należało. Alternatywą jest „wyzionąć ducha tutaj”. Pantera zna go z przydomka — „Szkarłatne Spojrzenie” — i odpowiada już tylko milczeniem.
 
 Te kilka kwestii poszerza obraz [[kto-poslal-zwierzeta|zleceniodawców]]. Nad trójką jest jakaś „góra”, która ocenia wykonanie zadania, a w zapisie pada imię „Wąż”, któremu Lew ma coś przekazać.
 

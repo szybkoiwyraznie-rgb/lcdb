@@ -26,3 +26,4 @@ Każda przyjęta decyzja pozostaje trwałą częścią historii projektu: jeśli
 | [0014](0014-dziennik-i-jak-czytac-kronike.md) | Dziennik *Ostatnio opowiedziane* (`co-nowego.md`) oraz przewodnik *Jak czytać kronikę* | przyjęta (2026-11-25) |
 | [0015](0015-sesja-galaz-pr-i-podglad.md) | Rytuał sesji: jedna sesja = jedna gałąź = jeden PR, stały podgląd na żywo i audyt poprzednika | przyjęta (2026-11-25) |
 | [0016](0016-wskazowki-walki-jako-zrodlo-nazw.md) | Wskazówki towarzyszące walce: osobne archiwum, z którego bierzemy tylko nazwy i obrazy świata | przyjęta (2026-11-27) |
+| [0017](0017-akta-grzesznikow-na-kartach-encji.md) | Akta Grzeszników: osobne archiwum, w całości zacytowane na kartach encji | przyjęta (2026-11-27) |

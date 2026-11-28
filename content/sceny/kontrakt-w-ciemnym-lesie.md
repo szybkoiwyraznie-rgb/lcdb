@@ -9,7 +9,7 @@ streszczenie: "Osaczony w ciemnym lesie przez Panterę, Lwa i Wilka, mężczyzna
 zapis: rozgrywka/zapisy/2026-11-27-001-prolog-selva-oscura-etap-0-1.md
 postacie: [dante, faust, ishmael, yi-sang, rodion, gregor, outis, heathcliff, pantera, lew, wilk]
 dzielnice: [dystrykt-4]
-miejsca: [ciemny-las, autobus]
+miejsca: [ciemny-las, mephistopheles]
 frakcje: [zwierzeta-mistrzyni, d-corp]
 watki: [utracona-pamiec-dantego, gdzie-jest-gwiazda, kim-sa-przybysze-z-autobusu, kto-poslal-zwierzeta]
 konteksty: [boska-komedia, faust-goethego]
@@ -183,7 +183,7 @@ Z rozmowy trójki widać, że pracują na zlecenie: Lew mówi o „mistrzyni”,
 
 ### Wtargnięcie autobusu
 
-Las miał być miejscem, w którym „nikt nie przychodzi i nikt nas nie zobaczy” — dlatego dźwięk nadjeżdżającego pojazdu zaskakuje całą trójkę. [[autobus|Autobus]] wtacza się między drzewa i odrzuca Lwa. Kpina Lwa, że „za zboczenie z drogi płaci się drożej, niż się zdaje”, w jednej chwili obraca się przeciw niemu.
+Las miał być miejscem, w którym „nikt nie przychodzi i nikt nas nie zobaczy” — dlatego dźwięk nadjeżdżającego pojazdu zaskakuje całą trójkę. [[mephistopheles|Autobus]] wtacza się między drzewa i odrzuca Lwa. Kpina Lwa, że „za zboczenie z drogi płaci się drożej, niż się zdaje”, w jednej chwili obraca się przeciw niemu.
 
 ### Kontrakt gwiazdy
 
