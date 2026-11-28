@@ -7,7 +7,7 @@ numer_grzesznika: 8
 pierwsze_wystapienie: kontrakt-w-ciemnym-lesie
 miejsca: [mephistopheles, ciemny-las]
 frakcje: [limbus-company]
-watki: [kim-sa-przybysze-z-autobusu]
+watki: [kim-sa-przybysze-z-autobusu, czego-laknie-mephistopheles]
 tagi: [autobus]
 interpretacje:
   - data: "2026-11-27 21:00"
@@ -42,6 +42,23 @@ W autobusie [[faust|Faust]] wyjaśnia [[dante|Dantemu]], że Grzesznicy to ci, �
 
 {{opracowanie
 Na prezentacji mówi „Mówcie mi Ishmael” i dziękuje Dantemu, że jej „przecięte na pół ciało znów jest w jednym kawałku”. Wytyka [[outis|Outis]] nagłą zmianę tonu wobec Kierownika. ([[dwunastu-grzesznikow|Dwunastu Grzeszników]])
+}}
+
+## Bunt po walce
+
+{{dostawa
+:::zapis
+**Ishmael:** Dołączyłam tu, bo mówiono mi, że będę mogła iść naprzód, zamiast tkwić w miejscu.
+**Ishmael:** A teraz… jak jakieś Szczury, ciągle tylko bezsensowna przemoc.
+:::
+}}
+
+{{opracowanie
+Po kolejnej walce Ishmael zatrzymuje wszystkich i mówi, po co tu jest. Obiecywano jej, że „będzie mogła iść naprzód, zamiast tkwić w miejscu”, a dostała „bezsensowną przemoc” jak u [[szczury|Szczurów]]. Jeśli Grzesznicy mają być tylko „bandą wynajętych osiłków”, pomyśli o „innej pracy”. Kiedy [[don-quixote|Don Quixote]] broni walki ze „złem”, Ishmael ją ucisza: „możesz choć na chwilę być cicho?”. Gdy [[faust|Faust]] przypomina, że odejście z firmy „nie jest dopuszczalne”, Ishmael pyta, czy kontrakt wiąże, „nawet jeśli przy podpisywaniu nas okłamano”. Słyszy, że „żadnego kłamstwa nie było” ([[zadnego-klamstwa-nie-bylo|Żadnego kłamstwa nie było]]).
+}}
+
+{{opracowanie
+Wynika z tego, że Ishmael sama „dołączyła”, podpisując kontrakt z firmą, i że skusiła ją obietnica zmiany. Ten wybuch stoi w ostrym kontraście z aktami, które wymieniają ją wśród nielicznych wykonujących zadania „bez większego szemrania”. Akta ostrzegają jednak także, że gdy relacja „raz zacznie się psuć, trudno ją będzie naprawić”.
 }}
 
 ## Akta Grzesznika

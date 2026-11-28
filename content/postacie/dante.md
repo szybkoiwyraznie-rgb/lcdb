@@ -10,7 +10,7 @@ dzielnica: dystrykt-4
 miejsca: [ciemny-las, mephistopheles]
 watki: [utracona-pamiec-dantego, gdzie-jest-gwiazda, kim-sa-przybysze-z-autobusu, kim-jest-vergilius, skarb-u-kresu-piekla]
 konteksty: [boska-komedia]
-pojecia: [zegarowa-glowa, kontrakt-z-dantem, aspekt, fikserzy]
+pojecia: [zegarowa-glowa, kontrakt-z-dantem, aspekt, fikserzy, lustro]
 tagi: [pamiec, gwiazda, kontrakt]
 frakcje: [limbus-company]
 utworzono: 2026-11-27
@@ -69,6 +69,16 @@ W autobusie Dante zostaje Kierownikiem już w rozmowie: tak nazywają go [[grego
 
 {{opracowanie
 Wiele w nim jeszcze z przypadkowego przybysza: odpowiada niepewnie, pyta, czemu niby ma iść do piekła, i o mało nie kłania się pierwszy [[outis|Outis]]. Zgadza się na wyprawę dopiero wtedy, gdy Faust obiecuje mu „wyryć [[aspekt|Aspekt]]”. Na koniec potwierdza się, że ból, który czuł w lesie, był ceną za życie Grzeszników: ożywają, bo on „cofnął zegar” ([[zakres-obowiazkow|Zakres obowiązków]]).
+}}
+
+## W drodze
+
+{{dostawa
+> Chyba powoli przywykam do walki u boku Grzeszników. Ale czy oni przywykają do mnie u swojego boku, to już chyba zupełnie inna sprawa…
+}}
+
+{{opracowanie
+Dante zaczyna oswajać się z rolą Kierownika, choć nie wie, czy Grzesznicy oswajają się z nim. [[vergilius|Vergilius]] chwali go, że „bardziej się nadaje niż przedtem”. Dante pyta, czy nie trzeba ścigać uciekających wrogów. Podczas sporu [[ishmael|Ishmael]] z [[faust|Faust]] o kontrakt z firmą tylko się przysłuchuje. Odzywa się dopiero przy autobusie, który ma być „głodny” („Autobus jest głodny?”), i przy [[lustro|Lustrze]] („Co niby się wydobywa?”). Odpowiedzi nie dostaje ([[zadnego-klamstwa-nie-bylo|Żadnego kłamstwa nie było]]).
 }}
 
 ## Imię
