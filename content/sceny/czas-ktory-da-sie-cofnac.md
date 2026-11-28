@@ -5,7 +5,7 @@ tytul: Czas, który da się cofnąć
 epizod: pantera-lew-i-wilk
 numer_sceny: "0-1b"
 kolejnosc: 2
-streszczenie: "Przybysze z autobusu przegrywają walkę i padają jeden po drugim, a Dante — bez wspomnień i bez planu — czeka na śmierć. Ratuje go nieznajomy o czerwonych oczach, który okalecza Lwa i Wilka, każe Panterze zabrać rannych i odejść, a Dantemu zapowiada Dantemu „czas, który da się cofnąć”. Okupione to zostaje bólem, pod którym ciała poległych odzyskują dawny kształt."
+streszczenie: "Przybysze z autobusu przegrywają walkę i padają jeden po drugim, a Dante — bez wspomnień i bez planu — czeka na śmierć. Ratuje go nieznajomy o czerwonych oczach, który okalecza Lwa i Wilka, każe Panterze zabrać rannych i odejść, a Dantemu zapowiada „czas, który da się cofnąć”. Okupione to zostaje bólem, pod którym ciała poległych odzyskują dawny kształt."
 zapis: rozgrywka/zapisy/2026-11-27-001-prolog-selva-oscura-etap-0-1.md
 postacie: [dante, faust, ishmael, yi-sang, rodion, gregor, pantera, lew, wilk, vergilius]
 dzielnice: [dystrykt-4]
