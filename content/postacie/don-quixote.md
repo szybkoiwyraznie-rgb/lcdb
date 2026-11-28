@@ -19,6 +19,12 @@ utworzono: 2026-11-27
 Grzesznica, która mówi podniosłym, archaicznym językiem („Jam jest Don Quixote!”, „Pytasz, kto zacz Fikser?”). Przedstawia się jako „Fikserka, co ramię w ramię z tobą pomknie ku marzeniom”, a [[fikserzy|Fikserów]] nazywa „obrońcami Miasta”. Chętnie objaśniłaby Dantemu całe Miasto, ale [[vergilius|Vergilius]] przerywa jej w pół zdania: „O ile pamiętam, mówiłem o krótkim powitaniu”. Na swoją kolej czekała z wyraźną niecierpliwością („Nareszcie kolej na mnie!”). Nie było jej wśród siedmiorga, które w lesie stanęło do walki.
 }}
 
+## Zło, co nas napadło
+
+{{opracowanie
+Gdy [[ishmael|Ishmael]] nazywa walki „bezsensowną przemocą”, Don Quixote od razu protestuje: „Nie jest to bez sensu! Wszakże to zło, co nas napadło!”. Walka ze „złem” pasuje do roli Fikserki sprawiedliwości, w którą się wciela. Ishmael ucisza ją jednak, zanim zdąży powiedzieć więcej ([[zadnego-klamstwa-nie-bylo|Żadnego kłamstwa nie było]]).
+}}
+
 ## Akta Grzesznika
 
 {{dostawa

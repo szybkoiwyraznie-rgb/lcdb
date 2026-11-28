@@ -5,9 +5,9 @@ tytul: Kim są przybysze z autobusu?
 rodzaj_watku: tajemnica
 stan: otwarty
 postacie: [faust, ishmael, yi-sang, rodion, gregor, outis, heathcliff, dante, sinclair, don-quixote, hong-lu, ryoshu, meursault, vergilius]
-sceny: [kontrakt-w-ciemnym-lesie, dwunastu-grzesznikow]
+sceny: [kontrakt-w-ciemnym-lesie, dwunastu-grzesznikow, zadnego-klamstwa-nie-bylo]
 rozdzialy: [prolog-selva-oscura]
-epizody: [pantera-lew-i-wilk, prezentacja]
+epizody: [pantera-lew-i-wilk, prezentacja, w-droge]
 pojecia: [kontrakt-z-dantem]
 tagi: [autobus, kontrakt, grzesznicy]
 frakcje: [limbus-company]
@@ -54,4 +54,10 @@ W lesie walczyło siedmioro, w autobusie przedstawia się dwanaścioro. Dochodz�
 
 {{opracowanie
 Przeszłość Grzeszników jest różna: [[yi-sang|Yi Sang]] był badaczem w Skrzydle, [[rodion|Rodion]] pochodzi z [[zaulki|Zaułków]], [[hong-lu|Hong Lu]] „nie zaznał niedostatku”, [[don-quixote|Don Quixote]] nazywa siebie Fikserką, a [[sinclair|Sinclair]] mówi o „pierwszej pracy w korporacji”. Akta zakazują wglądu w przeszłość [[outis|Outis]] i ostrzegają przed przeszłością [[ryoshu|Ryōshū]]. Wiedzą o tym, co stało się w lesie: jedni dziękują Dantemu za złożone na nowo ciała, inni czekali na „ostatnie ogniwo wyprawy”.
+}}
+
+## Kontrakt z firmą
+
+{{opracowanie
+Spór po walce pokazuje, jak Grzesznicy znaleźli się w autobusie. [[ishmael|Ishmael]] mówi, że „dołączyła”, bo „mówiono” jej, że „będzie mogła iść naprzód, zamiast tkwić w miejscu”. Przypomina też, że kontrakt podpisywali. [[faust|Faust]] przypomina, że „odejście z firmy nie jest dopuszczalne”. Grzesznicy są więc pracownikami firmy — według akt [[limbus-company|Limbus Company]] — związanymi podpisaną umową, zawartą jeszcze przed kontraktem z Dantem w lesie ([[zadnego-klamstwa-nie-bylo|Żadnego kłamstwa nie było]]).
 }}

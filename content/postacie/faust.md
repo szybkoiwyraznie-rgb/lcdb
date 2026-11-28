@@ -8,9 +8,9 @@ przydzial: Zawiera kontrakt z Dantem, objaśnia mu położenie i przekazuje jego
 pierwsze_wystapienie: kontrakt-w-ciemnym-lesie
 miejsca: [mephistopheles, ciemny-las]
 frakcje: [limbus-company]
-watki: [kim-sa-przybysze-z-autobusu, gdzie-jest-gwiazda]
+watki: [kim-sa-przybysze-z-autobusu, gdzie-jest-gwiazda, czego-laknie-mephistopheles]
 konteksty: [faust-goethego, boska-komedia]
-pojecia: [kontrakt-z-dantem, aspekt]
+pojecia: [kontrakt-z-dantem, aspekt, lustro]
 tagi: [kontrakt, gwiazda]
 interpretacje:
   - data: "2026-11-27 21:00"
@@ -57,6 +57,22 @@ Faust mówi o przybyszach w pierwszej osobie liczby mnogiej („od tej chwili na
 
 {{opracowanie
 Na pytanie Dantego, kim jest „Mefi”, Faust odpowiada, że to imię autobusu i napędzającego go silnika, „a także opus magnum, w które Faust włożyła serce i duszę” ([[mephistopheles|Mephistopheles]]). Przedstawia się jako „geniusz, jakiego spotyka się może raz w życiu”, i zapewnia, że Dante zrozumie to „z doświadczenia”. To ona wyjaśnia też, że Grzesznicy ożywają, bo Dante „cofnął zegar” ([[zakres-obowiazkow|Zakres obowiązków]]).
+}}
+
+## Żadnego kłamstwa
+
+{{dostawa
+:::zapis
+**Faust:** Nie przeczytała pani uważnie kontraktu?
+**Faust:** …Odejście z firmy nie jest dopuszczalne.
+**Ishmael:** …Myślisz, że kontrakt jest ważny, nawet jeśli przy podpisywaniu nas okłamano?
+**Faust:** Oczywiście, że jest ważny.
+**Faust:** Bo żadnego kłamstwa nie było.
+:::
+}}
+
+{{opracowanie
+Gdy [[ishmael|Ishmael]] grozi odejściem, Faust staje po stronie firmy. Przypomina, że kontrakt wyklucza odejście, a zarzut kłamstwa odrzuca bez wahania. Na dowód mówi więcej niż kiedykolwiek wcześniej o swoim dziele: nie zbudowała [[mephistopheles|Mephistophelesa]] „wyłącznie jako środka transportu”. Silnik „spożywa” paliwo, a jego „produkt uboczny” może uczynić Grzeszników silniejszymi. Wiąże to z [[lustro|Lustrem]], z którego „wydobywa się wszystkie możliwości”, i odsyła do [[yi-sang|Yi Sanga]], który „z pewnością dobrze to wie”. Wciąż też przekazuje słowa Dantego, tym razem [[vergilius|Vergiliusowi]]: „Martwi się o wrogów, którzy umknęli” ([[zadnego-klamstwa-nie-bylo|Żadnego kłamstwa nie było]]).
 }}
 
 ## Akta Grzesznika

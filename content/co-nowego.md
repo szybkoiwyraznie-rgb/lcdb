@@ -1,3 +1,9 @@
+## 2026-11-28 — W drogę
+
+Etap [[w-droge|W drogę]] zaczyna się od pochwały: [[vergilius|Vergilius]] uznaje, że [[dante|Dante]] dowodzi „lepiej niż przedtem”, i nie każe ścigać wrogów, którzy uciekli. W scenie [[zadnego-klamstwa-nie-bylo|Żadnego kłamstwa nie było]] [[ishmael|Ishmael]] buntuje się po kolejnej walce. Miała „iść naprzód”, a widzi tylko „bezsensowną przemoc”, więc myśli o innej pracy. [[faust|Faust]] przypomina, że z firmy nie wolno odejść i że „żadnego kłamstwa nie było”. [[mephistopheles|Mephistopheles]] to coś więcej niż autobus: [[charon|Charon]] mówi, że jest „zawsze głodny” i dlatego „płacze”, a z tego, co „spożywa” jego silnik, Grzesznicy mogą czerpać siłę. [[yi-sang|Yi Sang]] dopowiada, że gdy wydobędzie się z [[lustro|Lustra]] wszystkie możliwości, „rozwój nie zna granic”.
+
+Nowe pytanie: [[czego-laknie-mephistopheles|Czego łaknie Mephistopheles?]]. Pytanie Yi Sanga o „ja w lustrze” przywołuje wiersz [[lustro-yi-sanga|Lustro]] jego imiennika.
+
 ## 2026-11-27 — Prezentacja
 
 Etap [[prezentacja|Prezentacja]] przenosi opowieść na pokład autobusu [[mephistopheles|Mephistopheles]]. W scenie [[dwunastu-grzesznikow|Dwunastu Grzeszników]] mężczyzna o czerwonych oczach przedstawia się jako [[vergilius|Vergilius]], kierowczyni jako [[charon|Charon]], a [[faust|Faust]] wyjaśnia [[dante|Dantemu]], że jego mowę słyszą tylko Grzesznicy. Dwanaścioro przedstawia się nowemu Kierownikowi — wśród nich pięcioro nowych: [[sinclair|Sinclair]], [[don-quixote|Don Quixote]], [[hong-lu|Hong Lu]], [[ryoshu|Ryōshū]] i [[meursault|Meursault]].

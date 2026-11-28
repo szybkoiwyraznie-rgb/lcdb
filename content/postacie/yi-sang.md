@@ -8,7 +8,9 @@ numer_grzesznika: 1
 pierwsze_wystapienie: kontrakt-w-ciemnym-lesie
 miejsca: [mephistopheles, ciemny-las]
 frakcje: [limbus-company]
-watki: [kim-sa-przybysze-z-autobusu]
+watki: [kim-sa-przybysze-z-autobusu, czego-laknie-mephistopheles]
+pojecia: [lustro]
+konteksty: [lustro-yi-sanga]
 tagi: [autobus]
 interpretacje:
   - data: "2026-11-27 21:00"
@@ -49,6 +51,20 @@ W autobusie [[faust|Faust]] wyjaśnia [[dante|Dantemu]], że Grzesznicy to ci, �
 Na prezentacji podaje tylko imię („Zwą mnie Yi Sang”), a na zdziwienie Dantego odpowiada: „To cały Yi Sang”. Potem wpatruje się „pustym wzrokiem w szybę”. ([[dwunastu-grzesznikow|Dwunastu Grzeszników]])
 }}
 
+## Lustro
+
+{{dostawa
+:::zapis
+**Faust:** Pan Yi Sang z pewnością dobrze to wie. Gdy wydobędzie się z Lustra wszystkie możliwości…
+**Yi Sang:** …to i rozwój nie zna granic.
+**Yi Sang:** Czy ja w lustrze to ja, czy ktoś zupełnie inny?
+:::
+}}
+
+{{opracowanie
+[[faust|Faust]] wskazuje Yi Sanga jako kogoś, kto „z pewnością dobrze wie”, jak Grzesznicy mogą stać się silniejsi. On sam bez wahania kończy jej zdanie o [[lustro|Lustrze]]: „…to i rozwój nie zna granic”. Zna więc sprawę, o której reszta, łącznie z Dantem, słyszy po raz pierwszy. Zaraz potem wraca do swojego zwykłego tonu i pyta, czy „ja w lustrze” to on, „czy ktoś zupełnie inny” ([[zadnego-klamstwa-nie-bylo|Żadnego kłamstwa nie było]]).
+}}
+
 ## Akta Grzesznika
 
 {{dostawa
@@ -70,4 +86,8 @@ Akta, częściowo opatrzone znakiem „[UTAJNIONO]”, nazywają go byłym „na
 
 {{model
 Yi Sang (1910–1937) to pseudonim koreańskiego poety i prozaika epoki modernizmu, autora eksperymentalnych wierszy i opowiadań.
+}}
+
+{{kwerenda
+Jednym z jego wierszy jest *Lustro* (*거울*, 1933), w którym mówiący przygląda się swojemu odbiciu — podobnemu do niego, a zarazem odwróconemu i nieosiągalnemu ([[lustro-yi-sanga|Lustro Yi Sanga]]). {{zrodlo tytul="Mirror (Yi Sang poem) — Wikipedia" adres="https://en.wikipedia.org/wiki/Mirror_(Yi_Sang_poem)" data="2026-11-28"}}
 }}

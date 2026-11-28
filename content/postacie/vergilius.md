@@ -49,6 +49,12 @@ Vergilius nie słyszy Dantego — od jego zegarowej głowy dochodzi go tylko tyk
 To on przedstawia Dantemu zakres obowiązków: wyprawę przez Piekło, u którego kresu „czeka skarb”. Nie prosi o zrozumienie ani o zgodę, a gdy Dante się waha, mówi wprost, że „odmowy nie było w planie”. Zna okolicę — w dziwnych typach przed autobusem od razu rozpoznaje „stare znajome [[szczury|Szczury]]” — i ucina Faust wyjaśnienia o „cofaniu zegara”, bo „na to wyjaśnienie nie pora” ([[zakres-obowiazkow|Zakres obowiązków]]). Charon zwraca się do niego poufale: „Werg”.
 }}
 
+## W drodze
+
+{{opracowanie
+Po walce przed autobusem, na którą wysłał Grzeszników, gdy zobaczył [[szczury|Szczury]], Vergilius po raz pierwszy chwali Dantego: „Już lepiej, Dante. Bardziej się pan nadaje niż przedtem”. Uciekających wrogów nie każe ścigać, bo „i tak tamtędy jedziemy”. Zna więc drogę i nie zamierza z niej zbaczać ([[zadnego-klamstwa-nie-bylo|Żadnego kłamstwa nie było]]).
+}}
+
 ## Imię
 
 {{model
