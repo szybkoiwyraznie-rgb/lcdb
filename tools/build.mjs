@@ -17,7 +17,7 @@ import {
 } from './content-loader.mjs';
 import { collectModules, assertNoNameCollisions, stripModuleSyntax } from './module-graph.mjs';
 import {
-  zbudujRejestr, walidujStrone, sprawdzWiernoscSceny, sprawdzGraniceFabuly,
+  zbudujRejestr, walidujStrone, sprawdzWiernoscSceny, sprawdzWiernoscCytatow, sprawdzGraniceFabuly,
   sprawdzPorzadekEpizodow, resolverLinkow, policzBacklinki, policzTagi, policzStatystyki,
 } from '../src/lcdb/registry.js';
 import { parseWikilinks } from '../src/lcdb/links.js';
@@ -42,8 +42,13 @@ function czystTekstDoWyszukiwania(html) {
 function wytnijStreszczenieZBlokow(boksy) {
   const boks = boksy.find((b) => /^streszczenie$|^opis$/i.test(String(b.tytul ?? '').trim()));
   if (!boks) return '';
-  const czysty = boks.bloki
-    .map((bl) => bl.tresc.replace(/\{\{zrodlo[^}]*\}\}/g, '').replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_m, s, e) => e || s))
+  // Skrót na kafelku ma streszczać, a nie cytować: najpierw warstwy opracowania, a dosłowne
+  // bloki :::zapis (wielowierszowe cytaty z dostawy) nigdy nie trafiają do jednolinijkowego opisu.
+  const opracowanie = boks.bloki.filter((bl) => /^\{\{\s*opracowanie\b/.test(String(bl.otwarcie ?? '')));
+  const zrodlowe = opracowanie.length > 0 ? opracowanie : boks.bloki;
+  const czysty = zrodlowe
+    .map((bl) => bl.tresc.replace(/^\s*:::zapis[\s\S]*?^\s*:::\s*$/gm, ''))
+    .map((tresc) => tresc.replace(/\{\{zrodlo[^}]*\}\}/g, '').replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (_m, s, e) => e || s))
     .join(' ')
     .replace(/[#*_`>]/g, '')
     .replace(/\s+/g, ' ')
@@ -92,6 +97,10 @@ export function zbudujDane({ root = ROOT } = {}) {
     const sciezka = sc.zapis ? `rozgrywka/zapisy/${path.basename(sc.zapis)}` : null;
     const tekstZapisu = sciezka ? zapisy.get(sciezka) ?? null : null;
     problemy.push(...sprawdzWiernoscSceny(sc, tekstZapisu));
+  }
+  for (const s of suroweStrony) {
+    if (s.problem || s.typ === 'scena') continue;
+    problemy.push(...sprawdzWiernoscCytatow(s, zapisy.values()));
   }
 
   const stronyIndeks = {};

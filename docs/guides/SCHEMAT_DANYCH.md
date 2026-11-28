@@ -85,7 +85,7 @@ Każda niezgodność z tym schematem przerywa `npm run build` i `npm test`.
 - **Obowiązkowe sekcje `##`:** `Opis`.
 - **Pola własne:**
   - `rola` *(opcjonalne)* — słownik `ROLE_POSTACI`: `grzesznik`, `protagonista`, `przewodnik`, `sojusznik`, `antagonista`, `drugoplanowa`, `narrator`, `istota`, `inne`.
-  - `numer_grzesznika` *(opcjonalne, liczba całkowita `1`–`13`)* — numer więźnia/Grzesznika LCB (np. Yi Sang = `1`, Dante = `10`, Gregor = `13`).
+  - `numer_grzesznika` *(opcjonalne, liczba całkowita `1`–`13`)* — numer więźnia/Grzesznika LCB — zgodnie z aktami Grzeszników (np. Yi Sang = `1`, Faust = `2`, Gregor = `12`; ADR 0017).
   - `przydzial` *(opcjonalne, tekst)* — funkcja lub stanowisko w świecie opowieści.
   - `pseudonim` *(opcjonalne, tekst lub tablica tekstów)* — przydomki, tytuły, wcześniejsze miana.
   - Relacje pojedyncze: `pierwsze_wystapienie` (`scena`), `frakcja` (`frakcja`), `dzielnica` (`dzielnica`).
@@ -135,7 +135,7 @@ Każda niezgodność z tym schematem przerywa `npm run build` i `npm test`.
 Każdy boks otwierany jest nagłówkiem `## Tytuł sekcji`, a każdy akapit, lista, tabela lub cytat wewnątrz boksu **musi** leżeć wewnątrz bloku pochodzenia otwieranego osobną linią `{{pochodzenie …` i zamykanego osobną linią `}}`:
 
 1. **`{{dostawa`** — dosłowne słowa z materiału opowieści (w tym bloki `:::zapis … :::`, cytaty z *Notatek Dantego*, akt Grzeszników i logów obserwacyjnych).
-2. **`{{opracowanie`** — streszczenie i wnioski wynikające bezpośrednio i jednoznacznie z poznanych scen.
+2. **`{{opracowanie`** — streszczenie i wnioski wynikające bezpośrednio i jednoznacznie z poznanych scen. Także nazwy i tytuły świata wzięte ze wskazówek towarzyszących walce — zawsze z jawnym wskazaniem tego źródła w zdaniu (ADR 0016). Także streszczenie akt Grzeszników — jako zdanie firmy („według akt…”), pod dosłownym cytatem (ADR 0017).
 3. **`{{kwerenda`** — twierdzenie zewnętrzne (literackie, historyczne, językowe) potwierdzone sprawdzonym źródłem. **Wymaga** co najmniej jednej dyrektywy inline:
    ```markdown
    {{kwerenda

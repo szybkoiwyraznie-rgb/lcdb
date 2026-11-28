@@ -541,6 +541,13 @@ html[data-theme="dark"] .pewnosc {
   margin: 0.6rem 0;
 }
 
+/* Słowo zatarte w zapisie opowieści (`***`) — wyciszone, nigdy nie jako pogrubienie/kursywa */
+.zatarte {
+  color: var(--tekst-cichy);
+  letter-spacing: 0.12em;
+  cursor: help;
+}
+
 .skok-do-tresci {
   text-decoration: none;
   color: var(--tekst);

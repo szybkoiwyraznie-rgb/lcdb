@@ -12,6 +12,8 @@ Nowy materiał od właściciela może przyjść w jednej lub kilku postaciach:
 2. **Archiwa zbieracza danych gry** (`LC_DANE_<data>_<id>.zip` z Dysku Google) — zawierają raporty zmian SHA-256 i surowe pliki lokalizacyjne (`StoryData`, `PersonalityVoice`, `AbnormalityGuides`, `DanteNote`, `EGOVoice`).
 3. **Karty Grzeszników, Tożsamości ze Światów Lustrzanych (*Identities*) oraz *E.G.O*** — zawierają akta więźnia, opowieści Tożsamości i wypowiedzi postaci obok tabelek bojowych.
 4. **Zrzuty ekranu, własne notatki właściciela lub pytania interpretacyjne.**
+5. **Wskazówki towarzyszące walce** — objaśnienia sterowania z etapów (osobny plik, np. `LC_0_1_wskazowki.txt`, albo blok po znaczniku `*— Wskazówki —*`). Archiwizujemy je osobno jako `…-wskazowki.md` i bierzemy z nich wyłącznie nazwy, tytuły i obrazy świata — nigdy mechanikę (ADR 0016).
+6. **Akta Grzeszników** — dokumenty świata, w których firma przedstawia Kierownikowi Grzeszników (np. blok „Akta Grzeszników (introdukcje)” w LC_0_2). Archiwizujemy je osobno jako `…-akta.md`; nie są sceną, ale każdy ich wiersz trafia dosłownie na kartę encji (ADR 0017).
 
 ### Żelazna reguła pracy z paczkami na Dysku Google
 Paczka na Dysku Google (np. zbiór wszystkich 36 czytanek albo pełny zrzut `LC_DANE_*.zip`) niemal zawsze zawiera pliki wybiegające daleko poza miejsce, do którego właściciel dotarł w grze!
@@ -20,16 +22,9 @@ Paczka na Dysku Google (np. zbiór wszystkich 36 czytanek albo pełny zrzut `LC_
 
 ---
 
-## 2. Pierwsza prawdziwa dostawa — usunięcie zaślepki technicznej
+## 2. Pierwsza prawdziwa dostawa — zaślepka usunięta
 
-Jeśli w repozytorium wciąż znajduje się startowa zaślepka techniczna (`rozgrywka/zapisy/zaslepka-001.md` i karty z tagiem `zaslepka`):
-
-1. Wypisz wszystkie pliki zaślepki:
-   ```bash
-   grep -rl zaslepka content/ rozgrywka/
-   ```
-2. Usuń `rozgrywka/zapisy/zaslepka-001.md` oraz wszystkie 11 startowych kart zaślepki z `content/*/`.
-3. Zastąp treść `content/co-nowego.md` pierwszym prawdziwym wpisem z podróży i ustaw `rozgrywka/postep.json` na ostatnią scenę pierwszej dostawy.
+Startowa zaślepka techniczna (`rozgrywka/zapisy/zaslepka-001.md` i 11 kart z tagiem `zaslepka`) została usunięta przy pierwszej prawdziwej dostawie (LC_0_1 — Prolog *Selva Oscura*, Etap 0-1, 2026-11-27). Kontrola `grep -rl zaslepka content/ rozgrywka/` ma zwracać pustą listę; testy zależne od treści wskazują teraz na prawdziwe karty (`kontrakt-w-ciemnym-lesie`, `dante`).
 
 ---
 
@@ -37,11 +32,14 @@ Jeśli w repozytorium wciąż znajduje się startowa zaślepka techniczna (`rozg
 
 ### Krok 1 — Zarchiwizuj surowy zapis w `rozgrywka/zapisy/`
 - Zapisz rozegrany tekst w `rozgrywka/zapisy/RRRR-MM-DD-<nr>-<slug>.md` dokładnie w brzmieniu źródłowym (nie poprawiaj literówek oryginału, nie usuwaj `<!-- S001B -->` ani `\<…>`).
+- Wskazówki towarzyszące walce zapisz dosłownie w osobnym pliku `rozgrywka/zapisy/RRRR-MM-DD-<nr>-<slug>-wskazowki.md`. Żadna scena nie wskazuje go w `zapis:` (build to zatrzyma), a `npm run zapis` nie wymaga jego pokrycia. Nazwy i obrazy świata, które z nich wynikają, wpisz do kart jako `{{opracowanie}}` z jawnym źródłem („w objaśnieniach towarzyszących pierwszemu starciu…”), a zbieżności obrazów jako `{{model pewnosc=…}}` (ADR 0016).
+- Akta Grzeszników zapisz dosłownie w osobnym pliku `rozgrywka/zapisy/RRRR-MM-DD-<nr>-<slug>-akta.md`. Żadna scena nie wskazuje go w `zapis:`. Każdy wiersz akt (poza nagłówkami) zacytuj dosłownie w `:::zapis` na karcie encji — zwykle w sekcji `## Akta Grzesznika` danej postaci, z `{{opracowanie}}` streszczającym akta jako zdanie firmy. `npm run zapis` wypisze każdy niezacytowany wiersz, a build zatrzyma każdy cytat na karcie, który nie jest dosłownym fragmentem archiwum (ADR 0017).
 - Jeżeli dostawa jest po angielsku lub koreańsku, w `rozgrywka/zapisy/` i w blokach `:::zapis` trzymaj **dosłowny oryginał dostawy**, natomiast tytuł karty, `streszczenie`, podsekcje `###`, `## Analiza` i karty encji pisz po polsku (cytując kluczowe zwroty i podając `tytul_en` / `tytul_kr`). Jeżeli właściciel dostarczył polską czytankę — cały `:::zapis` jest w tym przekładzie.
 
 ### Krok 2 — Wyznacz granice scen (wydarzenie, nie węzeł techniczny)
 - Przeczytaj zarchiwizowany fragment i podziel go na **wydarzenia fabularne** (wspólne miejsce, ciągły czas, jedna rozmowa lub konfrontacja — ADR 0009).
 - Drobne węzły przed walką i po walce rozgrywające się w tym samym miejscu łącz w jedną kartę `scena`, rozdzielając jej etapy czytelnymi podsekcjami `###` wewnątrz `## Treść sceny`.
+- Gdy część „po walce” jest pełnym, osobnym wydarzeniem (nowa konfrontacja, nowa postać, inny rozstrzygający moment), dziel etap na dwie sceny o numerach z literą (`0-1a`, `0-1b`) — tak jak Etap 0-1: kontrakt i pierwszy rozkaz, potem klęska i interwencja nieznajomego.
 - Nadaj każdej nowej scenie kolejny, ciągły `kolejnosc` (`N + 1`, `N + 2`, …).
 
 ### Krok 3 — Utwórz karty scen, epizodu i rozdziału
@@ -73,4 +71,4 @@ npm test
 npm run zapis
 npm run build
 ```
-Sprawdź w oknie `npm run zapis`, czy w opracowanym pliku z `rozgrywka/zapisy/` nie zostały przypadkiem pominięte akapity dialogu lub narracji. Gdy komplet bram świeci na zielono — zrób commit i natychmiast `git push`.
+Sprawdź w oknie `npm run zapis`, czy w opracowanym pliku z `rozgrywka/zapisy/` nie zostały przypadkiem pominięte wiersze dialogu lub narracji (pokrycie liczone jest **wierszami**, bo czytanki zapisują całe ciągi kwestii bez pustych linii — `niepokryteWierszeZapisu`). Po pełnym opracowaniu archiwum narzędzie wypisuje `✓ … każdy wiersz archiwum należy do którejś sceny`. Gdy komplet bram świeci na zielono — zrób commit i natychmiast `git push`.

@@ -56,7 +56,7 @@ tools/                    Skrypty buildu, ładowania treści, serwera podglądu 
 test/                     Automatyczne bramy jakości uruchamiane w Node (node:test)
 docs/
   LESSONS.md              Sprawdzone lekcje i pułapki z pracy nad kroniką
-  decisions/              Rejestr decyzji architektonicznych (ADR 0001–0015)
+  decisions/              Rejestr decyzji architektonicznych (ADR 0001–0017)
   guides/                 Przewodniki: SCHEMAT_DANYCH.md, PRZEPLYW_SCENY.md, ENVIRONMENT.md
   audits/                 Zapisy audytów wcześniejszych PR-ów (gdy wykryto usterki)
   plans/                  Plany większych prac wieloetapowych
